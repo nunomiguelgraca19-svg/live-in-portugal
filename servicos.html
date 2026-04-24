@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services &#8212; Portugal Expat Home</title>
+<meta name="description" content="Our services for expats moving to Portugal: property visits, NIF registration, bank accounts, contract review, and signing with power of attorney. Transparent pricing.">
+<meta name="keywords" content="expat services Portugal, property visits, NIF, bank account, contract review">
+<meta property="og:title" content="Services &#8212; Portugal Expat Home">
+<meta property="og:description" content="From property visits to paperwork &#8212; we help expats settle in Portugal with confidence.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%231F4E79'>🏠</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #C8956C;
+  --dark: #1A1A2E;
+  --cream: #FAF7F2;
+  --text: #3D3D3D;
+  --muted: #8A8A8A;
+  --border: #E8E4DE;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100; padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(26,26,46,0.95); backdrop-filter: blur(10px);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: white; text-decoration: none; font-weight: 600; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; margin-left: 1.5rem; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: white; text-align: center; padding: 4rem 2rem 3rem;
+}
+.page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.75rem; }
+.page-header p { opacity: 0.8; font-size: 1.05rem; max-width: 550px; margin: 0 auto; line-height: 1.6; }
+
+/* INTRO */
+.intro { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; text-align: center; }
+.intro p { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+
+/* SERVICE CARDS */
+.services-grid { max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem; display: grid; gap: 1.5rem; }
+
+.service-card {
+  background: white; border-radius: 12px; padding: 2.5rem;
+  border: 1px solid var(--border); transition: box-shadow 0.3s;
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start;
+}
+.service-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+.service-info h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 0.5rem; }
+.service-info p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
+.service-includes { font-size: 0.85rem; color: var(--text); line-height: 1.8; }
+.service-includes strong { color: var(--dark); }
+
+.service-price {
+  text-align: right; white-space: nowrap; min-width: 140px;
+}
+.price-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 0.25rem; }
+.price-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); font-weight: 700; }
+.price-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* FREE BADGE */
+.free-section {
+  max-width: 700px; margin: 0 auto 3rem; padding: 2rem;
+  background: white; border-radius: 12px; border: 2px solid var(--gold);
+  text-align: center;
+}
+.free-section h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 0.5rem; }
+.free-section p { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+.free-badge { display: inline-block; background: var(--gold); color: white; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1rem; }
+
+/* NOTE */
+.note-section { max-width: 700px; margin: 0 auto; padding: 0 2rem 4rem; }
+.note-box {
+  background: #F5F0EB; border-radius: 10px; padding: 1.5rem 2rem;
+  font-size: 0.88rem; color: var(--muted); line-height: 1.7;
+}
+.note-box strong { color: var(--text); }
+
+/* CTA */
+.page-cta { text-align: center; padding: 3rem 2rem; }
+.page-cta a {
+  display: inline-block; background: var(--gold); color: white; padding: 1rem 2.5rem;
+  border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s;
+}
+.page-cta a:hover { background: #B8854F; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,149,108,0.3); }
+
+/* FOOTER */
+footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); background: white; border-top: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .service-card { grid-template-columns: 1fr; }
+  .service-price { text-align: left; }
+  .nav-links { display: none; }
+  .page-header h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Portugal Expat Home</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="Assistente-Onde-Morar-Portugal.html">Find your place</a>
+    <a href="sobre-nos.html">About us</a>
+    <a href="servicos.html" style="color:white">Services</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Our Services</h1>
+  <p>We handle the parts of moving to Portugal that nobody enjoys. You focus on the exciting part.</p>
+</div>
+
+<div class="intro">
+  <p>Every service is optional. Use our free matching tool first to find the right area, then pick the services that make sense for your situation. No packages, no pressure &#8212; just the help you actually need.</p>
+</div>
+
+<div style="max-width:700px;margin:0 auto;padding:0 2rem 2rem;">
+  <div class="free-section">
+    <div class="free-badge">Always free</div>
+    <h3>Area Matching Tool</h3>
+    <p>Answer 6 questions, get personalised recommendations across 47 areas in Portugal. Includes price data, lifestyle scores and direct links to property platforms.</p>
+  </div>
+</div>
+
+<div class="services-grid">
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>Property Visit</h3>
+      <p>Can&#8217;t be in Portugal yet? We visit properties on your behalf and send you a detailed video report with our honest assessment.</p>
+      <div class="service-includes"><strong>Includes:</strong> scheduling with landlord/agent, in-person visit with video walkthrough (15&#8211;20 min), written report on condition and neighbourhood, follow-up Q&#38;A.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;75</div>
+      <div class="price-note">per property</div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>NIF Registration</h3>
+      <p>Your tax number (NIF) is the first thing you need in Portugal &#8212; for renting, opening a bank account, or signing any contract.</p>
+      <div class="service-includes"><strong>Includes:</strong> preparation of all required documents, submission to Finan&#231;as (in person or online), fiscal representative setup if needed, delivery of NIF number.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;120</div>
+      <div class="price-note">one-time</div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>Bank Account Opening</h3>
+      <p>Having a Portuguese bank account simplifies everything &#8212; paying rent, utilities, and receiving salary or pension.</p>
+      <div class="service-includes"><strong>Includes:</strong> comparison of banks suited to your profile, document preparation, accompaniment to the branch (or remote opening where available), follow-up until account is active.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;90</div>
+      <div class="price-note">one-time</div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>Contract Review</h3>
+      <p>Before you sign anything, let us check the rental or purchase contract for red flags, missing clauses or unfair terms.</p>
+      <div class="service-includes"><strong>Includes:</strong> full review of the contract in Portuguese, written summary in English or French highlighting key terms and risks, suggested amendments, one revision round.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;150</div>
+      <div class="price-note">per contract</div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>Power of Attorney &#38; Signing</h3>
+      <p>If you can&#8217;t be present, we sign the rental or purchase contract on your behalf using a legally valid power of attorney.</p>
+      <div class="service-includes"><strong>Includes:</strong> guidance on preparing the power of attorney (notarised + apostilled), representation at the signing, key handover coordination, full documentation sent to you.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;250</div>
+      <div class="price-note">per signing</div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-info">
+      <h3>Full Relocation Package</h3>
+      <p>Everything above, bundled at a better price. Ideal if you&#8217;re starting from scratch and want one person handling it all.</p>
+      <div class="service-includes"><strong>Includes:</strong> NIF + bank account + up to 5 property visits + contract review + signing. One dedicated contact throughout. Timeline typically 4&#8211;8 weeks.</div>
+    </div>
+    <div class="service-price">
+      <div class="price-label">From</div>
+      <div class="price-value">&#8364;650</div>
+      <div class="price-note">all-in</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note-section">
+  <div class="note-box">
+    <strong>A note about prices.</strong> These are starting prices for standard cases. Complex situations (commercial properties, multiple signings, urgent timelines) may cost more. We always confirm the exact price before starting. No surprises.
+  </div>
+</div>
+
+<div class="page-cta">
+  <a href="sobre-nos.html#contacto">Get in touch &#8594;</a>
+</div>
+
+<footer>
+  <p>Portugal Expat Home &#169; 2026</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal Expat Home &#8212; Find Your Perfect Home in Portugal</title>
+<meta name="description" content="Free tool to help expats find the best area to live in Portugal. Compare 47 areas, get personalised recommendations, and access property listings. No sign-up required.">
+<meta name="keywords" content="expat, Portugal, where to live, housing, relocation, Lisbon, Porto">
+<meta name="author" content="Portugal Expat Home">
+<meta property="og:title" content="Portugal Expat Home &#8212; Find Your Perfect Home in Portugal">
+<meta property="og:description" content="Answer 8 questions and discover where you should live in Portugal. Free matching tool for expats.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1F4E79">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%231F4E79'>🏠</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #C8956C;
+  --dark: #1A1A2E;
+  --cream: #FAF7F2;
+  --text: #3D3D3D;
+  --muted: #8A8A8A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled { background: rgba(26,26,46,0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.2); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: white; text-decoration: none; font-weight: 600; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; margin-left: 1.5rem; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+/* ========== HERO WITH SLIDESHOW ========== */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; position: relative; overflow: hidden; color: white;
+}
+
+/* Slideshow background */
+.hero-slideshow {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
+}
+.hero-slide {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.5s ease-in-out;
+  transform: scale(1.05);
+  animation: kenBurns 20s linear infinite alternate;
+}
+.hero-slide.active { opacity: 1; }
+
+@keyframes kenBurns {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,26,46,0.65) 0%,
+    rgba(26,26,46,0.55) 50%,
+    rgba(26,26,46,0.75) 100%
+  );
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 750px; padding: 2rem; }
+
+.hero-badge {
+  display: inline-block; border: 1px solid rgba(200,149,108,0.6); color: var(--gold);
+  font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+  padding: 0.5rem 1.5rem; border-radius: 30px; margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 600;
+  line-height: 1.15; margin-bottom: 1.5rem; text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-text {
+  font-size: 1.15rem; font-weight: 300; line-height: 1.7; opacity: 0.9;
+  margin-bottom: 2.5rem; max-width: 550px; margin-left: auto; margin-right: auto;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.2);
+}
+
+.hero-cta {
+  display: inline-block; background: var(--gold); color: white; text-decoration: none;
+  padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem;
+  letter-spacing: 0.5px; transition: all 0.3s; border: none; cursor: pointer;
+}
+.hero-cta:hover { background: #B8854F; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,149,108,0.4); }
+
+.hero-secondary { display: block; margin-top: 1rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; }
+.hero-secondary:hover { color: rgba(255,255,255,0.8); }
+
+/* Slide indicator dots */
+.slide-dots {
+  position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); z-index: 2;
+  display: flex; gap: 0.5rem;
+}
+.slide-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3);
+  transition: all 0.3s; cursor: pointer;
+}
+.slide-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+/* ========== STATS BAR ========== */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: white; border-bottom: 1px solid #eee; }
+.stat-item { text-align: center; padding: 2rem 1rem; border-right: 1px solid #eee; }
+.stat-item:last-child { border-right: none; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--dark); font-weight: 700; }
+.stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ========== HOW IT WORKS ========== */
+.how-section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+.how-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--dark); margin-bottom: 0.5rem; }
+.how-section > p { color: var(--muted); margin-bottom: 3rem; }
+
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; text-align: center; }
+.step-card { position: relative; }
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%; background: var(--dark); color: white;
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+  margin: 0 auto 1rem; font-size: 1.1rem;
+}
+.step-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--dark); }
+.step-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+/* ========== TRUST SECTION ========== */
+.trust-section { background: var(--dark); color: white; padding: 4rem 2rem; text-align: center; }
+.trust-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto; }
+.trust-item { opacity: 0.85; }
+.trust-item .ti-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.trust-item h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+.trust-item p { font-size: 0.8rem; opacity: 0.6; }
+
+/* ========== FAQ ========== */
+.faq-section { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
+.faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dark); text-align: center; margin-bottom: 2rem; }
+.faq-item { border-bottom: 1px solid #ddd; padding: 1.25rem 0; cursor: pointer; }
+.faq-q { display: flex; justify-content: space-between; align-items: center; font-weight: 500; font-size: 1rem; color: var(--dark); }
+.faq-q::after { content: '+'; font-size: 1.3rem; color: var(--gold); transition: transform 0.3s; }
+.faq-item.open .faq-q::after { content: '\2212'; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 300px; padding-top: 0.75rem; }
+
+/* ========== CTA FINAL ========== */
+.final-cta { text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, var(--gold), #B8854F); color: white; }
+.final-cta h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
+.final-cta p { opacity: 0.9; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.final-cta a {
+  display: inline-block; background: white; color: var(--dark); padding: 1rem 2.5rem;
+  border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s;
+}
+.final-cta a:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+/* ========== FOOTER ========== */
+footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); background: white; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.4rem; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo">Portugal Expat Home</a>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="servicos.html">Services</a>
+    <a href="sobre-nos.html">About us</a>
+    <a href="#faq">FAQ</a>
+    <a href="Assistente-Onde-Morar-Portugal.html" style="color:var(--gold)">Find my place</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-slideshow" id="slideshow">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1548707309-dcebeab426c8?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1513735492246-483525079686?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Your new life starts here</div>
+    <h1>Find your <em>perfect home</em> in Portugal</h1>
+    <p class="hero-text">
+      We help expats discover the right neighbourhood, navigate the paperwork,
+      and settle in with confidence. No guesswork, no stress.
+    </p>
+    <a href="Assistente-Onde-Morar-Portugal.html" class="hero-cta">Find my place &#8594;</a>
+    <a href="#how" class="hero-secondary">See how it works</a>
+  </div>
+  <div class="slide-dots" id="slideDots"></div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number">47</div><div class="stat-label">Areas mapped</div></div>
+  <div class="stat-item"><div class="stat-number">20</div><div class="stat-label">Districts covered</div></div>
+  <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Languages</div></div>
+  <div class="stat-item"><div class="stat-number">0 &#8364;</div><div class="stat-label">Cost to you</div></div>
+</div>
+
+<section class="how-section" id="how">
+  <h2>How it works</h2>
+  <p>Three simple steps to finding your place in Portugal.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Tell us about yourself</h3>
+      <p>Answer 6 quick questions about your budget, lifestyle and priorities. Takes about 2 minutes.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Get matched</h3>
+      <p>Our algorithm compares your profile against 47 areas across Portugal and ranks the best fits.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Take the next step</h3>
+      <p>Explore listings yourself or let us help with visits, paperwork and signing &#8212; whatever you need.</p>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <h2>Why people trust us</h2>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="ti-icon">&#127968;</div>
+      <h4>Real market data</h4>
+      <p>Prices updated monthly from Idealista, INE and other official sources.</p>
+    </div>
+    <div class="trust-item">
+      <div class="ti-icon">&#128170;</div>
+      <h4>Free to use</h4>
+      <p>The matching tool costs nothing. You only pay if you want hands-on help.</p>
+    </div>
+    <div class="trust-item">
+      <div class="ti-icon">&#127758;</div>
+      <h4>Made for expats</h4>
+      <p>Built by people who have been through it. We know what you need to know.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <h2>Questions &#38; Answers</h2>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Is this service really free?</div>
+    <div class="faq-a">Yes. The matching tool and all the information on this site are completely free. We only charge for optional hands-on services: organising property visits, handling paperwork (NIF, bank accounts, contracts), or signing on your behalf with power of attorney. You choose what you need.</div>
+  </div>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What services can you help with?</div>
+    <div class="faq-a">We can organise property visits (in person or virtual), help with legal documentation (NIF registration, opening a bank account, visa applications), review contracts, and even sign rental or purchase agreements on your behalf using a power of attorney. Each service is priced transparently.</div>
+  </div>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">How accurate are the prices?</div>
+    <div class="faq-a">We use data from Idealista, INE (Portugal&#8217;s statistics office), and other sources, updated monthly. Prices shown are median asking prices and may differ from final transaction values. We recommend always verifying with current listings.</div>
+  </div>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Do I need a visa to live in Portugal?</div>
+    <div class="faq-a">If you&#8217;re from outside the EU, yes. The most common options are the D7 visa (passive income/pension), the Digital Nomad visa (D8), or the CPLP visa for lusophone countries. We can guide you through the process or refer you to a specialist immigration lawyer.</div>
+  </div>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Can I use this from outside Portugal?</div>
+    <div class="faq-a">Absolutely. The matching tool works from anywhere. If you want us to visit properties on your behalf, we can send video reports. Many of our clients start the process entirely online before flying in to sign.</div>
+  </div>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What areas of Portugal do you cover?</div>
+    <div class="faq-a">We currently have detailed data for 47 areas across all 20 districts, including Lisbon, Porto, Algarve, Silver Coast, Alentejo, Madeira and the Azores. We&#8217;re expanding to neighbourhood-level detail every month.</div>
+  </div>
+</section>
+
+<section class="final-cta" id="start">
+  <h2>Ready to find your place?</h2>
+  <p>Two minutes is all it takes. No sign-up required.</p>
+  <a href="Assistente-Onde-Morar-Portugal.html">Start the quiz &#8594;</a>
+</section>
+
+<footer>
+  <p>Portugal Expat Home &#169; 2026 &#8212; Data updated March 2026</p>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', function() {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Slideshow
+(function() {
+  var slides = document.querySelectorAll('.hero-slide');
+  var dotsContainer = document.getElementById('slideDots');
+  var current = 0;
+  var total = slides.length;
+  var interval = 5000; // 5 seconds per slide
+
+  // Create dots
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    dot.dataset.index = i;
+    dot.addEventListener('click', function() {
+      goToSlide(parseInt(this.dataset.index));
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  function goToSlide(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((current + 1) % total);
+  }
+
+  setInterval(nextSlide, interval);
+})();
+</script>
+
+<!-- Structured Data: LocalBusiness + WebApplication for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Portugal Expat Home",
+  "description": "Free tool to help expats find the best area to live in Portugal",
+  "url": "https://www.portugaldreamhome.com",
+  "areaServed": "PT",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PT"
+  },
+  "sameAs": []
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Portugal Expat Home",
+  "description": "Matching tool to find the best areas to live in Portugal",
+  "url": "https://www.portugaldreamhome.com",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Free matching tool"
+  }
+}
+</script>
+</body>
+</html>

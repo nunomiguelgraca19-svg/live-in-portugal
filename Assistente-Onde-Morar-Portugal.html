@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Live in Portugal &#8212; Portugal Expat Home</title>
+<meta name="description" content="Answer 8 questions and get personalised recommendations for where to live in Portugal. Compare prices, lifestyle and amenities across 76 municipalities. Free tool for expats.">
+<meta name="keywords" content="where to live Portugal, expat quiz, area selector, Portugal housing, relocation tool">
+<meta property="og:title" content="Where to Live in Portugal &#8212; Portugal Expat Home">
+<meta property="og:description" content="Free matching tool: find the best area in Portugal for your budget, lifestyle and priorities.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%231F4E79'>🏠</text></svg>">
+<style>
+:root {
+  --blue: #1F4E79;
+  --light-blue: #D6E4F0;
+  --mid-blue: #2E75B6;
+  --accent: #ED7D31;
+  --green: #70AD47;
+  --bg: #F8FAFB;
+  --card-bg: #FFFFFF;
+  --text: #2D3748;
+  --muted: #718096;
+  --border: #E2E8F0;
+  --gold: #C8956C;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+header { background: linear-gradient(135deg, var(--blue), var(--mid-blue)); color: white; padding: 2.5rem 1.5rem; text-align: center; }
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { opacity: 0.9; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+
+.lang-bar { text-align: center; padding: 0.5rem; background: #EDF2F7; }
+.lang-bar button { background: none; border: none; cursor: pointer; font-size: 0.9rem; color: var(--mid-blue); padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500; }
+.lang-bar button.active { background: var(--mid-blue); color: white; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+.steps { display: flex; justify-content: center; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+.step-dot { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 600; border: 2px solid var(--border); color: var(--muted); background: white; transition: all 0.3s; }
+.step-dot.active { border-color: var(--mid-blue); color: white; background: var(--mid-blue); }
+.step-dot.done { border-color: var(--green); color: white; background: var(--green); }
+
+.section { background: var(--card-bg); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); display: none; }
+.section.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.section h2 { color: var(--blue); font-size: 1.4rem; margin-bottom: 1rem; }
+.section .subtitle { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem; margin-top: -0.5rem; }
+
+.options { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.option { border: 2px solid var(--border); border-radius: 10px; padding: 1rem; cursor: pointer;
+  transition: all 0.2s; text-align: center; background: white; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.option:hover { border-color: var(--mid-blue); background: #F0F7FF; }
+.option:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.option.selected { border-color: var(--mid-blue); background: var(--light-blue); box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.1); }
+.option .icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+.option .label { font-weight: 600; font-size: 0.95rem; }
+.option .hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+.slider-wrap { margin: 1.5rem 0; }
+.slider-val { font-size: 1.5rem; color: var(--mid-blue); font-weight: 700; text-align: center; margin: 0.5rem 0; }
+input[type="range"] { width: 100%; height: 8px; -webkit-appearance: none; background: var(--light-blue); border-radius: 4px; outline: none; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--mid-blue); cursor: pointer; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+.range-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+
+.btn-row { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+.btn { padding: 0.75rem 2rem; border-radius: 8px; border: none; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.btn-primary { background: var(--mid-blue); color: white; }
+.btn-primary:hover { background: var(--blue); }
+.btn-primary:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-secondary { background: var(--border); color: var(--text); }
+.btn-secondary:hover { background: #CBD5E0; }
+.btn-secondary:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.results-grid { display: grid; gap: 1rem; }
+.result-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; background: white;
+  transition: all 0.2s; position: relative; overflow: hidden; }
+.result-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.result-card .match-badge { position: absolute; top: 0; right: 0; padding: 0.4rem 1rem; border-radius: 0 12px 0 12px;
+  font-size: 0.8rem; font-weight: 700; color: white; }
+.match-high { background: var(--green); }
+.match-med { background: var(--accent); }
+.match-low { background: #A0AEC0; }
+.result-card h3 { font-size: 1.2rem; color: var(--blue); margin-bottom: 0.25rem; }
+.result-card .region { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.result-card .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.75rem 0; }
+.stat { background: var(--bg); padding: 0.5rem 0.75rem; border-radius: 6px; }
+.stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-value { font-size: 1rem; font-weight: 700; color: var(--blue); }
+.result-card .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.tag { padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.tag-pro { background: #E6F4EA; color: #1B7A3D; }
+.tag-con { background: #FEE2E2; color: #B91C1C; }
+
+.proximity-info { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+.proximity-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0; font-size: 0.85rem; }
+.proximity-item .prox-icon { font-size: 1rem; min-width: 1.5rem; text-align: center; }
+.proximity-item .prox-name { font-weight: 500; color: var(--blue); }
+.proximity-item .prox-dist { color: var(--muted); font-size: 0.8rem; }
+.proximity-item .prox-detail { font-size: 0.78rem; color: var(--muted); font-style: italic; }
+
+.show-more-btn { display: block; margin: 1.5rem auto; padding: 0.75rem 2.5rem; background: white; border: 2px solid var(--mid-blue); color: var(--mid-blue); border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.show-more-btn:hover { background: var(--mid-blue); color: white; }
+
+.info-toggle { background: none; border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; margin-top: 1rem; color: var(--mid-blue); transition: all 0.2s; }
+.info-toggle:hover { background: var(--light-blue); }
+
+.info-box { margin-top: 1rem; padding: 1.5rem; background: var(--bg); border-radius: 10px; border: 1px solid var(--border); }
+.info-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.info-col h4 { color: var(--blue); margin-bottom: 0.5rem; font-size: 0.95rem; }
+.info-col ul { list-style: none; padding: 0; }
+.info-col li { padding: 0.25rem 0; font-size: 0.85rem; color: var(--text); }
+.info-col li::before { content: "•"; color: var(--mid-blue); margin-right: 0.5rem; }
+
+.summary { background: var(--light-blue); border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.summary-item { font-size: 0.9rem; }
+.summary-item strong { color: var(--blue); }
+
+.results-count { text-align: center; color: var(--muted); margin: 1rem 0; font-size: 0.95rem; }
+.result-card .notes { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+
+.multi-note { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
+
+/* EXIT PATH SECTION */
+.exit-section { margin-top: 2.5rem; padding-top: 2rem; border-top: 2px solid var(--border); }
+.exit-section h3 { font-size: 1.3rem; color: var(--blue); text-align: center; margin-bottom: 1.5rem; }
+.exit-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.exit-card { border: 2px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; cursor: pointer; transition: all 0.3s; }
+.exit-card:hover { border-color: var(--mid-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.exit-card .exit-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.exit-card h4 { font-size: 1.1rem; color: var(--blue); margin-bottom: 0.5rem; }
+.exit-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+
+/* HELP PANEL */
+.help-panel, .explore-panel { display: none; margin-top: 1.5rem; animation: fadeIn 0.4s ease; }
+.help-panel.visible, .explore-panel.visible { display: block; }
+
+.help-panel { background: linear-gradient(135deg, var(--blue), var(--mid-blue)); border-radius: 12px; padding: 2rem; color: white; text-align: center; }
+.help-panel h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.help-panel p { opacity: 0.9; margin-bottom: 1rem; font-size: 0.95rem; }
+.help-panel .contact-methods { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
+.help-panel .contact-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.2s; }
+.help-panel .contact-btn:hover { background: rgba(255,255,255,0.25); }
+
+.explore-panel { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+.explore-panel h4 { font-size: 1.1rem; color: var(--blue); margin-bottom: 0.75rem; }
+.explore-panel .platform-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+.platform-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); font-weight: 500; transition: all 0.2s; font-size: 0.9rem; }
+.platform-link:hover { border-color: var(--mid-blue); background: #F0F7FF; }
+.platform-link .picon { font-size: 1.2rem; }
+
+/* MISMATCH PANEL */
+.mismatch-panel { display: none; margin-bottom: 1.5rem; animation: fadeIn 0.4s ease; }
+.mismatch-panel.visible { display: block; }
+.mismatch-header { background: linear-gradient(135deg, var(--accent), #D4864A); border-radius: 12px 12px 0 0; padding: 1.5rem 2rem; color: white; text-align: center; }
+.mismatch-header .mismatch-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.mismatch-header h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+.mismatch-header p { font-size: 0.9rem; opacity: 0.9; }
+.mismatch-body { background: white; border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; padding: 1.5rem 2rem; }
+.mismatch-scenarios { display: flex; flex-direction: column; gap: 0.75rem; }
+.scenario-card { border: 2px solid var(--border); border-radius: 10px; padding: 1.25rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: flex-start; gap: 1rem; }
+.scenario-card:hover { border-color: var(--mid-blue); background: #F0F7FF; }
+.scenario-card.selected { border-color: var(--mid-blue); background: var(--light-blue); }
+.scenario-icon { font-size: 1.5rem; min-width: 2rem; text-align: center; padding-top: 0.1rem; }
+.scenario-text h4 { font-size: 0.95rem; color: var(--blue); margin-bottom: 0.25rem; }
+.scenario-text p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+.scenario-text .scenario-preview { font-size: 0.8rem; color: var(--green); font-weight: 500; margin-top: 0.3rem; }
+
+footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+
+@media (max-width: 600px) {
+  .options { grid-template-columns: 1fr 1fr; }
+  header h1 { font-size: 1.5rem; }
+  .result-card .stats { grid-template-columns: 1fr; }
+  .exit-cards { grid-template-columns: 1fr; }
+  .info-comparison { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="active" onclick="setLang('en')">English</button>
+  <button onclick="setLang('fr')">Fran&#231;ais</button>
+  <button onclick="setLang('pt')">Portugu&#234;s</button>
+</div>
+
+<header>
+  <a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;display:inline-block;margin-bottom:0.5rem;">&#8592; Back to home</a>
+  <h1 id="hTitle">Portugal Expat Guide</h1>
+  <p id="hSubtitle">Answer 8 simple questions and discover the best places to live in Portugal.</p>
+</header>
+
+<div class="container">
+  <div class="steps" id="stepDots"></div>
+
+  <!-- STEP 1: Rent or Buy -->
+  <div class="section active" id="step1">
+    <h2 id="s1title">1. Are you looking to rent or buy?</h2>
+    <div class="options" id="modeOptions">
+      <div class="option" data-value="rent" onclick="selectOne(this,'mode')">
+        <div class="icon">&#127968;</div>
+        <div class="label" data-t="rent_label">Rent</div>
+      </div>
+      <div class="option" data-value="buy" onclick="selectOne(this,'mode')">
+        <div class="icon">&#128273;</div>
+        <div class="label" data-t="buy_label">Buy</div>
+      </div>
+    </div>
+    <div class="btn-row"><div></div><button class="btn btn-primary" onclick="next(1)" id="btn1" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 2: Budget -->
+  <div class="section" id="step2">
+    <h2 id="s2title">2. What is your budget?</h2>
+    <div class="slider-wrap" id="rentBudgetWrap">
+      <div class="slider-val" id="rentBudgetDisplay">&#8364;1,200/month</div>
+      <input type="range" id="rentBudget" min="300" max="3500" step="50" value="1200">
+      <div class="range-labels"><span>&#8364;300</span><span>&#8364;1,000</span><span>&#8364;2,000</span><span>&#8364;3,500+</span></div>
+      <p class="budget-note" id="budgetRentNote" style="text-align:center;font-size:0.82rem;color:#718096;margin-top:0.5rem;font-style:italic;" data-t="budget_rent_note">Monthly rent only &#8212; does not include utilities, food, transport or other living costs.</p>
+    </div>
+    <div class="slider-wrap" id="buyBudgetWrap" style="display:none">
+      <div class="slider-val" id="buyBudgetDisplay">&#8364;250,000</div>
+      <input type="range" id="buyBudget" min="100000" max="800000" step="10000" value="250000">
+      <div class="range-labels"><span>&#8364;100k</span><span>&#8364;250k</span><span>&#8364;500k</span><span>&#8364;800k+</span></div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(2)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(2)" data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 3: Household -->
+  <div class="section" id="step3">
+    <h2 id="s3title">3. Who are you moving with?</h2>
+    <div class="options" id="householdOptions">
+      <div class="option" data-value="solo" onclick="selectOne(this,'household')">
+        <div class="icon">&#128100;</div>
+        <div class="label" data-t="solo_label">Just me</div>
+      </div>
+      <div class="option" data-value="couple" onclick="selectOne(this,'household')">
+        <div class="icon">&#128107;</div>
+        <div class="label" data-t="couple_label">Couple</div>
+      </div>
+      <div class="option" data-value="family" onclick="selectOne(this,'household')">
+        <div class="icon">&#128106;</div>
+        <div class="label" data-t="family_label">Family with children</div>
+      </div>
+      <div class="option" data-value="retired" onclick="selectOne(this,'household')">
+        <div class="icon">&#127773;</div>
+        <div class="label" data-t="retired_label">Retired / semi-retired</div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(3)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(3)" id="btn3" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 4: School preference (CONDITIONAL - only for families) -->
+  <div class="section" id="step4">
+    <h2 id="s4title">4. What type of school are you looking for?</h2>
+    <p class="subtitle" id="s4sub">This helps us find areas near the right schools for your family.</p>
+    <div class="options" id="schoolOptions">
+      <div class="option" data-value="international" onclick="selectOne(this,'schoolPref')">
+        <div class="icon">&#127757;</div>
+        <div class="label" data-t="school_intl_label">International school</div>
+      </div>
+      <div class="option" data-value="portuguese" onclick="selectOne(this,'schoolPref')">
+        <div class="icon">&#127477;&#127481;</div>
+        <div class="label" data-t="school_pt_label">Portuguese public school</div>
+      </div>
+      <div class="option" data-value="undecided" onclick="selectOne(this,'schoolPref')">
+        <div class="icon">&#129300;</div>
+        <div class="label" data-t="school_undecided_label">Not sure yet</div>
+      </div>
+    </div>
+    <button class="info-toggle" onclick="toggleSchoolInfo()" id="schoolInfoBtn" data-t="school_info_btn">&#8505;&#65039; What's the difference?</button>
+    <div class="info-box" id="schoolInfoBox" style="display:none;">
+      <div class="info-comparison">
+        <div class="info-col">
+          <h4 data-t="school_intl_title">International Schools</h4>
+          <ul>
+            <li data-t="school_intl_1">Tuition: €5,000–€22,000/year</li>
+            <li data-t="school_intl_2">IB, British, American, French or German curriculum</li>
+            <li data-t="school_intl_3">Smaller classes (15-20 students)</li>
+            <li data-t="school_intl_4">English (or other) as primary language</li>
+            <li data-t="school_intl_5">Often until 3:30-4:00 PM</li>
+          </ul>
+        </div>
+        <div class="info-col">
+          <h4 data-t="school_pt_title">Portuguese Public Schools</h4>
+          <ul>
+            <li data-t="school_pt_1">Free (state-funded)</li>
+            <li data-t="school_pt_2">Portuguese national curriculum</li>
+            <li data-t="school_pt_3">Larger classes (25-30 students)</li>
+            <li data-t="school_pt_4">Portuguese as primary language</li>
+            <li data-t="school_pt_5">Usually until 3:30 PM, some until 5:30 PM with ATL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(4)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(4)" id="btn4" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 5: Mobility (NEW) -->
+  <div class="section" id="step5">
+    <h2 id="s5title">5. Will you have a car in Portugal?</h2>
+    <p class="subtitle" id="s5sub">This affects how we weight distance to schools and hospitals.</p>
+    <div class="options" id="mobilityOptions">
+      <div class="option" data-value="car" onclick="selectOne(this,'mobility')">
+        <div class="icon">&#128664;</div>
+        <div class="label" data-t="car_label">Yes, I'll have a car</div>
+      </div>
+      <div class="option" data-value="public" onclick="selectOne(this,'mobility')">
+        <div class="icon">&#128647;</div>
+        <div class="label" data-t="public_label">Public transport only</div>
+      </div>
+      <div class="option" data-value="maybe" onclick="selectOne(this,'mobility')">
+        <div class="icon">&#129335;</div>
+        <div class="label" data-t="maybe_car_label">Not sure yet</div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(5)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(5)" id="btn5" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 6: Work situation (was step 4) -->
+  <div class="section" id="step6">
+    <h2 id="s6title">6. What is your work situation?</h2>
+    <div class="options" id="workOptions">
+      <div class="option" data-value="remote" onclick="selectOne(this,'work')">
+        <div class="icon">&#128187;</div>
+        <div class="label" data-t="remote_label">Remote work</div>
+      </div>
+      <div class="option" data-value="local_job" onclick="selectOne(this,'work')">
+        <div class="icon">&#127970;</div>
+        <div class="label" data-t="localjob_label">Need a local job</div>
+      </div>
+      <div class="option" data-value="pension" onclick="selectOne(this,'work')">
+        <div class="icon">&#128176;</div>
+        <div class="label" data-t="pension_label">Pension / passive income</div>
+      </div>
+      <div class="option" data-value="entrepreneur" onclick="selectOne(this,'work')">
+        <div class="icon">&#128640;</div>
+        <div class="label" data-t="entrepreneur_label">Entrepreneur / freelance</div>
+      </div>
+      <div class="option" data-value="student" onclick="selectOne(this,'work')">
+        <div class="icon">&#127891;</div>
+        <div class="label" data-t="student_label">Student / researcher</div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(6)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(6)" id="btn6" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 7: Climate (was step 5) -->
+  <div class="section" id="step7">
+    <h2 id="s7title">7. What kind of weather do you prefer?</h2>
+    <div class="options" id="climateOptions">
+      <div class="option" data-value="hot" onclick="selectOne(this,'climate')">
+        <div class="icon">&#9728;&#65039;</div>
+        <div class="label" data-t="hot_label">Lots of sun and heat</div>
+        <div class="hint" data-t="hot_hint">Algarve, Alentejo</div>
+      </div>
+      <div class="option" data-value="mild" onclick="selectOne(this,'climate')">
+        <div class="icon">&#127780;&#65039;</div>
+        <div class="label" data-t="mild_label">Warm but not too hot</div>
+        <div class="hint" data-t="mild_hint">Lisbon, central coast</div>
+      </div>
+      <div class="option" data-value="oceanic" onclick="selectOne(this,'climate')">
+        <div class="icon">&#127786;&#65039;</div>
+        <div class="label" data-t="oceanic_label">I don't mind rain and cooler weather</div>
+        <div class="hint" data-t="oceanic_hint">Porto, northern Portugal</div>
+      </div>
+      <div class="option" data-value="subtropical" onclick="selectOne(this,'climate')">
+        <div class="icon">&#127796;</div>
+        <div class="label" data-t="subtropical_label">Mild all year, like an eternal spring</div>
+        <div class="hint" data-t="subtropical_hint">Madeira, Azores</div>
+      </div>
+      <div class="option" data-value="any" onclick="selectOne(this,'climate')">
+        <div class="icon">&#129335;</div>
+        <div class="label" data-t="any_label">Not a priority</div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(7)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="next(7)" id="btn7" disabled data-t="next_btn">Next &#8594;</button></div>
+  </div>
+
+  <!-- STEP 8: Priorities (was step 6) (multi-select) -->
+  <div class="section" id="step8">
+    <h2 id="s8title">8. What matters most to you?</h2>
+    <p class="subtitle multi-note" id="s8sub">Choose up to 5 priorities.</p>
+    <div class="options" id="priorityOptions">
+      <div class="option" data-value="beach" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127958;&#65039;</div>
+        <div class="label" data-t="pbeach_label">Close to the coast</div>
+      </div>
+      <div class="option" data-value="culture" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127912;</div>
+        <div class="label" data-t="pculture_label">Culture and nightlife</div>
+      </div>
+      <div class="option" data-value="schools" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127979;</div>
+        <div class="label" data-t="pschools_label">Good schools</div>
+      </div>
+      <div class="option" data-value="healthcare" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127973;</div>
+        <div class="label" data-t="phealthcare_label">Healthcare nearby</div>
+      </div>
+      <div class="option" data-value="airport" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#9992;&#65039;</div>
+        <div class="label" data-t="pairport_label">Close to an airport</div>
+      </div>
+      <div class="option" data-value="transport" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#128647;</div>
+        <div class="label" data-t="ptransport_label">Public transport</div>
+      </div>
+      <div class="option" data-value="nature" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127795;</div>
+        <div class="label" data-t="pnature_label">Nature and space</div>
+      </div>
+      <div class="option" data-value="quiet" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#128724;</div>
+        <div class="label" data-t="pquiet_label">Peace and quiet</div>
+      </div>
+      <div class="option" data-value="expat" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#129309;</div>
+        <div class="label" data-t="pexpat_label">Expat community</div>
+      </div>
+      <div class="option" data-value="gastronomia" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127869;</div>
+        <div class="label" data-t="pgastronomia_label">Good food and wine</div>
+      </div>
+      <div class="option" data-value="vidaNocturna" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127897;</div>
+        <div class="label" data-t="pvidaNocturna_label">Nightlife and social scene</div>
+      </div>
+      <div class="option" data-value="praiasFluviais" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127955;</div>
+        <div class="label" data-t="ppraiasFluviais_label">River beaches</div>
+      </div>
+      <div class="option" data-value="infantil" onclick="toggleMulti(this,'priorities')">
+        <div class="icon">&#127880;</div>
+        <div class="label" data-t="pinfantil_label">Family-friendly</div>
+      </div>
+    </div>
+    <div class="btn-row"><button class="btn btn-secondary" onclick="prev(8)" data-t="prev_btn">&#8592; Back</button><button class="btn btn-primary" onclick="showResults()" id="btn8" disabled data-t="results_btn">See recommendations &#8594;</button></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="section" id="results">
+    <h2 id="rTitle">Your personalised recommendations</h2>
+    <p class="subtitle" id="rSub">Ranked by how well each area matches your profile.</p>
+    <div class="summary" id="summaryBar"></div>
+
+    <!-- MISMATCH PANEL -->
+    <div class="mismatch-panel" id="mismatchPanel">
+      <div class="mismatch-header">
+        <div class="mismatch-icon">🍾</div>
+        <h3 id="mismatchTitle">Champagne taste on a beer budget?</h3>
+        <p id="mismatchSub">No perfect match — but here's how to get close.</p>
+      </div>
+      <div class="mismatch-body">
+        <div class="mismatch-scenarios" id="mismatchScenarios"></div>
+      </div>
+    </div>
+
+    <div class="results-count" id="resultsCount"></div>
+    <div class="results-grid" id="resultsGrid"></div>
+    <button class="show-more-btn" id="showMoreBtn" onclick="toggleShowMore()" style="display:none;" data-t="show_more">Show more results</button>
+
+    <!-- EXIT PATH -->
+    <div class="exit-section">
+      <h3 id="exitTitle">What would you like to do next?</h3>
+      <div class="exit-cards">
+        <div class="exit-card" onclick="showHelp()">
+          <div class="exit-icon">&#128588;</div>
+          <h4 data-t="exit_help_title">I want help</h4>
+          <p data-t="exit_help_desc">Get assistance with property visits, paperwork, NIF, bank accounts, or contract signing.</p>
+        </div>
+        <div class="exit-card" onclick="showExplore()">
+          <div class="exit-icon">&#128270;</div>
+          <h4 data-t="exit_explore_title">I'll explore on my own</h4>
+          <p data-t="exit_explore_desc">Browse listings directly on the main Portuguese property platforms.</p>
+        </div>
+      </div>
+
+      <!-- HELP PANEL -->
+      <div class="help-panel" id="helpPanel">
+        <h4 data-t="help_heading">We can help you every step of the way</h4>
+        <p data-t="help_text">From finding the right property to handling all the bureaucracy. Our services include property visits (in person or virtual), NIF registration, opening a bank account, contract review, and signing with power of attorney.</p>
+        <div class="contact-methods">
+          <a href="mailto:info@portugalexpathome.com" class="contact-btn">&#9993; info@portugalexpathome.com</a>
+          <a href="https://wa.me/351936655954" class="contact-btn" target="_blank">&#128172; WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- EXPLORE PANEL -->
+      <div class="explore-panel" id="explorePanel">
+        <h4 data-t="explore_heading">Search listings on these platforms</h4>
+        <div class="platform-links" id="platformLinks"></div>
+      </div>
+    </div>
+
+    <div class="btn-row" style="margin-top:2rem"><button class="btn btn-secondary" onclick="restart()" data-t="restart_btn">&#8592; Start over</button></div>
+  </div>
+</div>
+
+<footer>
+  <p><a href="index.html" style="color:inherit;text-decoration:none;">Portugal Expat Home</a> &#169; 2026 &#8212; <a href="servicos.html" style="color:var(--mid-blue);text-decoration:none;">Services</a> &#183; <a href="sobre-nos.html" style="color:var(--mid-blue);text-decoration:none;">About us</a></p>
+  <p>This guide is informational. Always consult a professional before making decisions.</p>
+</footer>
+
+<script>
+// ============ SCHOOLS DATABASE ============
+const schools = [
+  {name:"St. Julian's School",lat:38.6850,lon:-9.3310,curriculum:"British/IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€8k-€18k"},
+  {name:"CAISL (Carlucci American)",lat:38.7610,lon:-9.3410,curriculum:"American/IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€12k-€22k"},
+  {name:"Deutsche Schule Lissabon",lat:38.7690,lon:-9.1670,curriculum:"German",lang:"DE/PT",bilingual:true,ages:"3-18",fees:"€5k-€9k"},
+  {name:"Lycée Français Charles Lepierre",lat:38.7340,lon:-9.1530,curriculum:"French",lang:"FR/PT",bilingual:true,ages:"3-18",fees:"€5.5k-€8.5k"},
+  {name:"PaRK International (Alfragide)",lat:38.7380,lon:-9.2180,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€7k-€14k"},
+  {name:"St. Dominic's International School",lat:38.7540,lon:-9.3220,curriculum:"IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€9k-€16k"},
+  {name:"United Lisbon International School",lat:38.7450,lon:-9.1350,curriculum:"IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€10k-€18k"},
+  {name:"Redbridge School",lat:38.7500,lon:-9.1850,curriculum:"British",lang:"EN/PT",bilingual:true,ages:"1-18",fees:"€6k-€12k"},
+  {name:"Prime School International",lat:38.7200,lon:-9.1480,curriculum:"British/IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€8k-€15k"},
+  {name:"International Preparatory School",lat:38.7480,lon:-9.1580,curriculum:"British",lang:"EN",bilingual:false,ages:"3-11",fees:"€7k-€10k"},
+  {name:"TASIS Portugal",lat:38.7870,lon:-9.3910,curriculum:"American/IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€10k-€20k"},
+  {name:"International School of Cascais",lat:38.7010,lon:-9.4150,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-14",fees:"€6k-€10k"},
+  {name:"St. Peter's International School",lat:38.5589,lon:-8.9012,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€5k-€12k"},
+  {name:"Oporto British School",lat:41.1580,lon:-8.6290,curriculum:"British",lang:"EN",bilingual:false,ages:"3-18",fees:"€7k-€13k"},
+  {name:"CLIP (Porto)",lat:41.1680,lon:-8.6450,curriculum:"IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€8k-€15k"},
+  {name:"Deutsche Schule zu Porto",lat:41.1560,lon:-8.6540,curriculum:"German",lang:"DE/PT",bilingual:true,ages:"3-18",fees:"€4.5k-€8k"},
+  {name:"Lycée Français International Porto",lat:41.1540,lon:-8.6430,curriculum:"French",lang:"FR/PT",bilingual:true,ages:"3-18",fees:"€5k-€8.5k"},
+  {name:"Colégio Luso-Internacional Porto",lat:41.1530,lon:-8.6100,curriculum:"Portuguese/IB",lang:"PT/EN",bilingual:true,ages:"3-18",fees:"€5k-€9k"},
+  {name:"Nobel International School Algarve",lat:37.0860,lon:-8.2480,curriculum:"British",lang:"EN",bilingual:false,ages:"3-18",fees:"€6k-€12k"},
+  {name:"International School of the Algarve",lat:37.1110,lon:-8.4430,curriculum:"British/IB",lang:"EN",bilingual:false,ages:"3-18",fees:"€5.5k-€11k"},
+  {name:"Colégio Internacional de Vilamoura",lat:37.0890,lon:-8.1160,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€6k-€13k"},
+  {name:"International School of Braga",lat:41.5530,lon:-8.4180,curriculum:"British",lang:"EN",bilingual:false,ages:"3-16",fees:"€5k-€9k"},
+  {name:"Queen Elizabeth's School",lat:40.2050,lon:-8.4100,curriculum:"British",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€4k-€8k"},
+  {name:"International School of Madeira",lat:32.6550,lon:-16.9100,curriculum:"British/IB",lang:"EN",bilingual:false,ages:"3-16",fees:"€4k-€8k"},
+  {name:"International School of Aveiro",lat:40.6350,lon:-8.6500,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-14",fees:"€4k-€7k"},
+  {name:"PaRK International (Cascais)",lat:38.6980,lon:-9.4180,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€7k-€14k"},
+  {name:"PaRK International (Restelo)",lat:38.7080,lon:-9.2100,curriculum:"IB",lang:"EN/PT",bilingual:true,ages:"3-18",fees:"€7k-€14k"},
+  {name:"Colégio Europeu (Funchal)",lat:32.6530,lon:-16.9150,curriculum:"Portuguese/IB",lang:"PT/EN",bilingual:true,ages:"3-18",fees:"€3.5k-€6k"},
+  {name:"International School of Peniche",lat:39.3560,lon:-9.3780,curriculum:"British",lang:"EN",bilingual:false,ages:"3-14",fees:"€3.5k-€6k"},
+  {name:"Colégio Cedros (Gaia/Porto)",lat:41.1230,lon:-8.6250,curriculum:"Portuguese/Cambridge",lang:"PT/EN",bilingual:true,ages:"3-18",fees:"€4k-€7k"}
+];
+
+// ============ PUBLIC HOSPITALS ============
+const hospitalsPublic = [
+  {name:"Hospital de Santa Maria",lat:38.7490,lon:-9.1600},
+  {name:"Hospital São José",lat:38.7250,lon:-9.1370},
+  {name:"Hospital São Francisco Xavier",lat:38.7110,lon:-9.2130},
+  {name:"Hospital Amadora-Sintra",lat:38.7530,lon:-9.2350},
+  {name:"Hospital Beatriz Ângelo (Loures)",lat:38.8100,lon:-9.1680},
+  {name:"Hospital Garcia de Orta (Almada)",lat:38.6750,lon:-9.1630},
+  {name:"Hospital de São Bernardo (Setúbal)",lat:38.5220,lon:-8.8920},
+  {name:"Hospital de Santo António (Porto)",lat:41.1470,lon:-8.6220},
+  {name:"Hospital São João (Porto)",lat:41.1630,lon:-8.6020},
+  {name:"Hospital Pedro Hispano (Matosinhos)",lat:41.1850,lon:-8.6870},
+  {name:"Hospital de Braga",lat:41.5540,lon:-8.4190},
+  {name:"Hospital de Faro",lat:37.0210,lon:-7.9350},
+  {name:"Hospital de Portimão",lat:37.1380,lon:-8.5370},
+  {name:"Hospital de Coimbra (CHUC)",lat:40.2070,lon:-8.4180},
+  {name:"Hospital de Aveiro",lat:40.6380,lon:-8.6510},
+  {name:"Hospital de Leiria",lat:39.7380,lon:-8.8070},
+  {name:"Hospital de Évora",lat:38.5720,lon:-7.9080},
+  {name:"Hospital de Beja",lat:38.0180,lon:-7.8660},
+  {name:"Hospital de Castelo Branco",lat:39.8230,lon:-7.4920},
+  {name:"Hospital da Guarda",lat:40.5360,lon:-7.2630},
+  {name:"Hospital de Bragança",lat:41.8040,lon:-6.7540},
+  {name:"Hospital de Viana do Castelo",lat:41.7020,lon:-8.8240},
+  {name:"Hospital Dr. Nélio Mendonça (Funchal)",lat:32.6530,lon:-16.9080},
+  {name:"Hospital de Ponta Delgada",lat:37.7500,lon:-25.6690},
+  {name:"Hospital de Caldas da Rainha",lat:39.4030,lon:-9.1340},
+  {name:"Hospital de Santarém",lat:39.2360,lon:-8.6850},
+  {name:"Hospital Barreiro-Montijo",lat:38.6600,lon:-9.0680}
+];
+
+// ============ PRIVATE HOSPITALS ============
+const hospitalsPrivate = [
+  {name:"CUF Descobertas",lat:38.7680,lon:-9.0960},
+  {name:"CUF Tejo",lat:38.7390,lon:-9.1350},
+  {name:"Hospital da Luz Lisboa",lat:38.7600,lon:-9.1640},
+  {name:"Hospital Lusíadas Lisboa",lat:38.7390,lon:-9.1500},
+  {name:"CUF Cascais",lat:38.6950,lon:-9.4200},
+  {name:"CUF Sintra",lat:38.7600,lon:-9.3000},
+  {name:"CUF Torres Vedras",lat:39.0910,lon:-9.2590},
+  {name:"Hospital da Luz Setúbal",lat:38.5250,lon:-8.8970},
+  {name:"Hospital CUF Porto",lat:41.1580,lon:-8.6150},
+  {name:"Hospital da Luz Arrábida",lat:41.1310,lon:-8.6430},
+  {name:"Hospital Lusíadas Porto",lat:41.1580,lon:-8.6320},
+  {name:"Trofa Saúde Braga",lat:41.5530,lon:-8.4260},
+  {name:"Hospital Particular do Algarve",lat:37.0230,lon:-7.9510},
+  {name:"HPA Gambelas",lat:37.0480,lon:-7.9700},
+  {name:"HPA Alvor",lat:37.1310,lon:-8.5920},
+  {name:"Hospital da Luz Aveiro",lat:40.6390,lon:-8.6490},
+  {name:"Hospital da Luz Coimbra",lat:40.2000,lon:-8.4160},
+  {name:"Hospital Particular da Madeira",lat:32.6510,lon:-16.9150},
+  {name:"Lusíadas Faro",lat:37.0280,lon:-7.9370},
+  {name:"CUF Viseu",lat:40.6590,lon:-7.9100},
+  {name:"Hospital da Luz Oeiras",lat:38.6920,lon:-9.3100}
+];
+
+// ============ PLACES DATA (WITH GPS) ============
+const places = [
+  {name:"Santo António (Av. Liberdade)",region:"Lisboa",district:"Lisboa",lat:38.7200,lon:-9.1450,buyM2:7289,rentM2:28,rentT2:[2200,3500],trend:"+8.2%",climate:["mild"],tags:["urban","nightlife"],expat:5,transport:5,nature:1,beach:0,healthcare:5,airport:5,schools:4,quiet:1,culture:5,pros:["Premium zone","Metro","Nightlife"],cons:["Very expensive","Touristy"],notes:"Most expensive area in Lisbon. Luxury shopping, hotels."},
+  {name:"Avenidas Novas",region:"Lisboa",district:"Lisboa",lat:38.7350,lon:-9.1470,buyM2:6916,rentM2:26,rentT2:[2000,3000],trend:"+5.1%",climate:["mild"],tags:["urban"],expat:4,transport:5,nature:2,beach:0,healthcare:5,airport:5,schools:4,quiet:3,culture:4,pros:["Central","Safe","Metro"],cons:["Expensive"],notes:"Saldanha, Picoas. Offices and premium residential."},
+  {name:"Parque das Nações",region:"Lisboa",district:"Lisboa",lat:38.7680,lon:-9.0940,buyM2:5840,rentM2:22,rentT2:[1700,2500],trend:"+4.0%",climate:["mild"],tags:["urban"],expat:4,transport:5,nature:3,beach:0,healthcare:4,airport:5,schools:4,quiet:3,culture:3,pros:["Modern","Safe","Metro","Riverside"],cons:["Impersonal"],notes:"Expo area. Families, international companies."},
+  {name:"Campo de Ourique",region:"Lisboa",district:"Lisboa",lat:38.7140,lon:-9.1630,buyM2:5528,rentM2:21,rentT2:[1600,2400],trend:"+3.8%",climate:["mild"],tags:["urban","quiet"],expat:3,transport:4,nature:2,beach:0,healthcare:4,airport:4,schools:4,quiet:4,culture:3,pros:["Charming","Safe","Local market"],cons:["No direct metro"],notes:"Quiet, family-friendly, local market."},
+  {name:"Estrela / Lapa",region:"Lisboa",district:"Lisboa",lat:38.7130,lon:-9.1580,buyM2:5487,rentM2:22,rentT2:[1700,2600],trend:"+2.5%",climate:["mild"],tags:["urban","quiet"],expat:4,transport:4,nature:3,beach:0,healthcare:4,airport:4,schools:4,quiet:4,culture:4,pros:["Elegant","Gardens","Embassies"],cons:["Expensive"],notes:"European expats. Jardim da Estrela."},
+  {name:"Alvalade",region:"Lisboa",district:"Lisboa",lat:38.7520,lon:-9.1380,buyM2:4700,rentM2:19,rentT2:[1400,2000],trend:"+3.2%",climate:["mild"],tags:["urban","quiet"],expat:3,transport:5,nature:3,beach:0,healthcare:4,airport:4,schools:5,quiet:4,culture:3,pros:["Family-friendly","Metro","Schools"],cons:["Less nightlife"],notes:"Stable, safe neighbourhood. Great for families."},
+  {name:"Arroios / Alameda",region:"Lisboa",district:"Lisboa",lat:38.7340,lon:-9.1340,buyM2:4189,rentM2:17.5,rentT2:[1200,1700],trend:"-4.8%",climate:["mild"],tags:["urban","nightlife"],expat:4,transport:5,nature:1,beach:0,healthcare:4,airport:4,schools:3,quiet:2,culture:5,pros:["Multicultural","Metro","Lively"],cons:["Noisy"],notes:"Most multicultural area. Restaurants from everywhere."},
+  {name:"Benfica",region:"Lisboa",district:"Lisboa",lat:38.7520,lon:-9.2030,buyM2:4016,rentM2:15.5,rentT2:[1100,1500],trend:"+3.6%",climate:["mild"],tags:["urban"],expat:2,transport:4,nature:2,beach:0,healthcare:4,airport:4,schools:3,quiet:3,culture:2,pros:["Affordable for Lisbon","Colombo mall","Metro"],cons:["Less charming"],notes:"Residential. Colombo shopping centre."},
+  {name:"Olivais",region:"Lisboa",district:"Lisboa",lat:38.7680,lon:-9.1100,buyM2:3700,rentM2:14,rentT2:[900,1300],trend:"+4.4%",climate:["mild"],tags:["urban","quiet"],expat:2,transport:4,nature:3,beach:0,healthcare:3,airport:5,schools:3,quiet:4,culture:2,pros:["Affordable","Metro","Near Expo"],cons:["Peripheral"],notes:"Next to Parque das Nações. Good value."},
+  {name:"Lumiar / Telheiras",region:"Lisboa",district:"Lisboa",lat:38.7680,lon:-9.1670,buyM2:3650,rentM2:14.5,rentT2:[950,1350],trend:"+3.5%",climate:["mild"],tags:["urban","quiet"],expat:2,transport:4,nature:3,beach:0,healthcare:4,airport:4,schools:4,quiet:4,culture:2,pros:["University area","Metro","Parks"],cons:["Peripheral"],notes:"Telheiras included. Stable residential area."},
+  {name:"Santa Clara",region:"Lisboa",district:"Lisboa",lat:38.7750,lon:-9.1250,buyM2:3475,rentM2:12,rentT2:[775,1100],trend:"+2.0%",climate:["mild"],tags:["quiet"],expat:1,transport:3,nature:3,beach:0,healthcare:3,airport:4,schools:2,quiet:4,culture:1,pros:["Cheapest in Lisbon","Potential"],cons:["Few services","Less central"],notes:"Most affordable area in Lisbon."},
+  {name:"Beato",region:"Lisboa",district:"Lisboa",lat:38.7350,lon:-9.1100,buyM2:3800,rentM2:15,rentT2:[1000,1500],trend:"+32.3%",climate:["mild"],tags:["urban"],expat:2,transport:3,nature:2,beach:0,healthcare:3,airport:4,schools:2,quiet:2,culture:3,pros:["Booming area","River views","Creative hub"],cons:["Under construction"],notes:"Biggest price growth in Lisbon. Creative hub."},
+  {name:"Foz do Douro / Nevogilde",region:"Porto",district:"Porto",lat:41.1570,lon:-8.6760,buyM2:4716,rentM2:21,rentT2:[1600,2300],trend:"-3.6%",climate:["oceanic"],tags:["beach","urban","quiet"],expat:4,transport:3,nature:4,beach:5,healthcare:4,airport:3,schools:5,quiet:4,culture:3,pros:["Beach","Luxury","International schools"],cons:["Expensive","Car needed"],notes:"Most expensive area in Porto. Premium."},
+  {name:"Centro Histórico (Ribeira/Cedofeita)",region:"Porto",district:"Porto",lat:41.1450,lon:-8.6120,buyM2:4200,rentM2:21,rentT2:[1400,2000],trend:"+3.0%",climate:["oceanic"],tags:["urban","nightlife"],expat:4,transport:4,nature:1,beach:0,healthcare:4,airport:3,schools:3,quiet:1,culture:5,pros:["Charming","Culture","Restaurants"],cons:["Touristy","Noisy"],notes:"Clérigos, Ribeira. Heart of Porto."},
+  {name:"Paranhos (University area)",region:"Porto",district:"Porto",lat:41.1630,lon:-8.6050,buyM2:3709,rentM2:16.5,rentT2:[1100,1600],trend:"+8.1%",climate:["oceanic"],tags:["urban"],expat:2,transport:4,nature:2,beach:0,healthcare:5,airport:3,schools:4,quiet:3,culture:2,pros:["University","Hospital","Metro"],cons:["Student area"],notes:"University of Porto, S. João Hospital."},
+  {name:"Bonfim",region:"Porto",district:"Porto",lat:41.1480,lon:-8.5980,buyM2:3200,rentM2:16,rentT2:[1100,1500],trend:"+4.5%",climate:["oceanic"],tags:["urban","nightlife"],expat:3,transport:4,nature:1,beach:0,healthcare:3,airport:3,schools:3,quiet:2,culture:4,pros:["Young","Creative","Galleries"],cons:["Gentrifying"],notes:"Trendy area. Bars, galleries, street art."},
+  {name:"Campanhã",region:"Porto",district:"Porto",lat:41.1480,lon:-8.5830,buyM2:3091,rentM2:14,rentT2:[900,1300],trend:"-7.0%",climate:["oceanic"],tags:["urban"],expat:1,transport:4,nature:2,beach:0,healthcare:3,airport:3,schools:2,quiet:3,culture:1,pros:["Most affordable","New transport hub"],cons:["In transition"],notes:"New intermodal terminal. Huge potential."},
+  {name:"Cascais / Estoril",region:"Cascais",district:"Lisboa",lat:38.6970,lon:-9.4210,buyM2:6280,rentM2:22,rentT2:[1800,2800],trend:"+6.2%",climate:["mild"],tags:["beach","urban","quiet"],expat:5,transport:4,nature:4,beach:5,healthcare:4,airport:4,schools:5,quiet:3,culture:3,pros:["Beach","International schools","Safe","Strong expat community"],cons:["Very expensive"],notes:"Premium coastal living. 35min train to Lisbon."},
+  {name:"Carcavelos / Parede",region:"Cascais",district:"Lisboa",lat:38.6830,lon:-9.3340,buyM2:4933,rentM2:19,rentT2:[1500,2200],trend:"+5.0%",climate:["mild"],tags:["beach","urban"],expat:4,transport:4,nature:3,beach:5,healthcare:3,airport:4,schools:5,quiet:3,culture:2,pros:["Surf","Families","Train to Lisbon","Nova SBE university"],cons:["Expensive"],notes:"Popular with expat families. Great beaches."},
+  {name:"Oeiras (Paço de Arcos)",region:"Oeiras",district:"Lisboa",lat:38.6910,lon:-9.3130,buyM2:4391,rentM2:18,rentT2:[1400,2000],trend:"+5.8%",climate:["mild"],tags:["urban"],expat:3,transport:4,nature:3,beach:3,healthcare:4,airport:4,schools:4,quiet:3,culture:2,pros:["Tech hub","Multinationals","Train"],cons:["Less charming"],notes:"Taguspark. Many tech companies."},
+  {name:"Almada / Costa da Caparica",region:"Almada",district:"Setúbal",lat:38.6740,lon:-9.2350,buyM2:3100,rentM2:14,rentT2:[1000,1400],trend:"+8.0%",climate:["mild"],tags:["beach"],expat:2,transport:4,nature:4,beach:5,healthcare:3,airport:3,schools:3,quiet:3,culture:2,pros:["Great beaches","Ferry to Lisbon","Affordable"],cons:["Bridge traffic"],notes:"Costa da Caparica = surf. Views of Lisbon."},
+  {name:"Sintra (Queluz/Massamá)",region:"Sintra",district:"Lisboa",lat:38.7540,lon:-9.2580,buyM2:2400,rentM2:11,rentT2:[750,1050],trend:"+7.0%",climate:["mild"],tags:["quiet"],expat:1,transport:3,nature:4,beach:0,healthcare:3,airport:3,schools:3,quiet:4,culture:1,pros:["Very affordable","Train to Lisbon","UNESCO nearby"],cons:["Far from centre","Dense"],notes:"Among the cheapest in Greater Lisbon."},
+  {name:"Odivelas",region:"Odivelas",district:"Lisboa",lat:38.7930,lon:-9.1790,buyM2:2800,rentM2:13,rentT2:[900,1300],trend:"+7.0%",climate:["mild"],tags:["urban"],expat:1,transport:4,nature:2,beach:0,healthcare:3,airport:4,schools:3,quiet:3,culture:1,pros:["Direct metro","Affordable"],cons:["Suburban"],notes:"20min metro to Campo Grande."},
+  {name:"Barreiro",region:"Barreiro",district:"Setúbal",lat:38.6630,lon:-9.0720,buyM2:2157,rentM2:10.5,rentT2:[700,1000],trend:"+9.0%",climate:["mild"],tags:["quiet"],expat:1,transport:3,nature:2,beach:0,healthcare:3,airport:3,schools:2,quiet:3,culture:1,pros:["Direct ferry to Lisbon","Very affordable"],cons:["Industrial past"],notes:"30min ferry to Terreiro do Paço."},
+  {name:"Setúbal city",region:"Setúbal",district:"Setúbal",lat:38.5240,lon:-8.8940,buyM2:2500,rentM2:12,rentT2:[800,1200],trend:"+11.4%",climate:["mild"],tags:["beach","quiet"],expat:2,transport:3,nature:5,beach:4,healthcare:4,airport:3,schools:3,quiet:4,culture:2,pros:["Arrábida nature","Dolphins","Seafood"],cons:["1h from Lisbon"],notes:"Exceptional nature. Strong growth."},
+  {name:"Loulé (Quinta do Lago)",region:"Algarve",district:"Faro",lat:37.0470,lon:-8.0190,buyM2:5672,rentM2:16.3,rentT2:[1300,2000],trend:"+8.5%",climate:["hot"],tags:["beach","quiet"],expat:5,transport:2,nature:4,beach:5,healthcare:3,airport:3,schools:3,quiet:4,culture:2,pros:["Luxury","Golf","Resorts","Safe"],cons:["Very expensive","Car essential","Seasonal"],notes:"Ultra-premium. Golf resorts."},
+  {name:"Lagos",region:"Algarve",district:"Faro",lat:37.1020,lon:-8.6730,buyM2:5066,rentM2:13.7,rentT2:[1100,1600],trend:"+6.0%",climate:["hot"],tags:["beach","nightlife"],expat:4,transport:2,nature:4,beach:5,healthcare:3,airport:3,schools:3,quiet:2,culture:3,pros:["Surf","Beautiful beaches","Young vibe"],cons:["Seasonal","Car needed"],notes:"Very popular with young expats."},
+  {name:"Albufeira",region:"Algarve",district:"Faro",lat:37.0880,lon:-8.2500,buyM2:2941,rentM2:15,rentT2:[1000,1500],trend:"+8.0%",climate:["hot"],tags:["beach","nightlife"],expat:5,transport:2,nature:3,beach:5,healthcare:3,airport:3,schools:3,quiet:1,culture:2,pros:["Tourism hub","English widely spoken"],cons:["Very touristy","Seasonal","Noisy"],notes:"Biggest tourist centre in the Algarve."},
+  {name:"Tavira",region:"Algarve",district:"Faro",lat:37.1270,lon:-7.6490,buyM2:2577,rentM2:14.6,rentT2:[900,1300],trend:"+5.5%",climate:["hot"],tags:["beach","quiet"],expat:4,transport:2,nature:5,beach:5,healthcare:3,airport:3,schools:2,quiet:5,culture:2,pros:["Authentic","Calm","Ria Formosa"],cons:["Quiet nightlife","Seasonal"],notes:"Most authentic town in the Algarve. Retirees love it."},
+  {name:"Faro (capital)",region:"Algarve",district:"Faro",lat:37.0194,lon:-7.9322,buyM2:2420,rentM2:14.1,rentT2:[900,1300],trend:"+6.0%",climate:["hot"],tags:["urban","beach"],expat:3,transport:3,nature:3,beach:3,healthcare:4,airport:5,schools:3,quiet:3,culture:2,pros:["Airport","University","Services year-round"],cons:["Less scenic"],notes:"Regional capital. Works all year, not just summer."},
+  {name:"Aljezur (Costa Vicentina)",region:"Algarve",district:"Faro",lat:37.3170,lon:-8.7990,buyM2:2800,rentM2:11,rentT2:[800,1200],trend:"+9.0%",climate:["hot"],tags:["beach","quiet"],expat:3,transport:1,nature:5,beach:5,healthcare:2,airport:2,schools:1,quiet:5,culture:1,pros:["Surf","Natural park","Unspoilt"],cons:["Remote","No public transport"],notes:"Costa Vicentina. Increasingly popular with surfers."},
+  {name:"Braga (city)",region:"Braga",district:"Braga",lat:41.5503,lon:-8.4200,buyM2:2133,rentM2:10.3,rentT2:[700,1000],trend:"+22.7%",climate:["oceanic"],tags:["urban"],expat:2,transport:3,nature:3,beach:0,healthcare:4,airport:3,schools:4,quiet:3,culture:3,pros:["Young city","Historic","Affordable"],cons:["Small expat community","Rainy"],notes:"University of Minho. Strong growth."},
+  {name:"Viana do Castelo",region:"Minho",district:"Viana",lat:41.6940,lon:-8.8310,buyM2:2233,rentM2:9.5,rentT2:[550,800],trend:"+16.8%",climate:["oceanic"],tags:["beach","quiet"],expat:1,transport:2,nature:5,beach:4,healthcare:3,airport:2,schools:3,quiet:5,culture:2,pros:["Beach + mountains","Beautiful","Affordable"],cons:["Rainy","Few expats","Cold winters"],notes:"Northern coast. Stunning landscapes."},
+  {name:"Aveiro (city)",region:"Aveiro",district:"Aveiro",lat:40.6405,lon:-8.6538,buyM2:2740,rentM2:11.6,rentT2:[700,1000],trend:"+13.9%",climate:["oceanic"],tags:["urban","quiet"],expat:2,transport:3,nature:4,beach:3,healthcare:4,airport:3,schools:4,quiet:4,culture:2,pros:["Canals","University","Quality of life"],cons:["Small city","Less English"],notes:"Portuguese Venice. Retirees and remote workers."},
+  {name:"Coimbra (city)",region:"Coimbra",district:"Coimbra",lat:40.2033,lon:-8.4103,buyM2:2296,rentM2:12.9,rentT2:[650,950],trend:"+32.4%",climate:["mild"],tags:["urban"],expat:2,transport:3,nature:3,beach:0,healthcare:5,airport:3,schools:4,quiet:3,culture:3,pros:["University","Top hospital","Central location"],cons:["Less cosmopolitan"],notes:"Oldest university in Portugal. Biggest price growth."},
+  {name:"Caldas da Rainha",region:"Silver Coast",district:"Leiria",lat:39.4030,lon:-9.1380,buyM2:2299,rentM2:9,rentT2:[550,800],trend:"+10.0%",climate:["mild"],tags:["quiet","beach"],expat:3,transport:2,nature:4,beach:3,healthcare:3,airport:3,schools:3,quiet:4,culture:2,pros:["Thermal spa","Art scene","Near beach"],cons:["Small town"],notes:"Silver Coast. Artistic community. Popular with expats."},
+  {name:"Ericeira",region:"Silver Coast",district:"Lisboa",lat:38.9630,lon:-9.4150,buyM2:3500,rentM2:13,rentT2:[900,1300],trend:"+8.0%",climate:["mild"],tags:["beach"],expat:4,transport:2,nature:5,beach:5,healthcare:2,airport:3,schools:2,quiet:3,culture:2,pros:["World Surf Reserve","Expats","40min to Lisbon"],cons:["Car needed","Prices rising"],notes:"World Surf Reserve. Very popular with expats."},
+  {name:"Peniche",region:"Silver Coast",district:"Leiria",lat:39.3560,lon:-9.3810,buyM2:2642,rentM2:9.5,rentT2:[600,850],trend:"+7.0%",climate:["mild"],tags:["beach"],expat:2,transport:2,nature:5,beach:5,healthcare:2,airport:3,schools:2,quiet:4,culture:1,pros:["Supertubos surf","Berlengas island","Affordable"],cons:["Windy","Remote"],notes:"World surf championships. Fishing town."},
+  {name:"Évora (city)",region:"Alentejo",district:"Évora",lat:38.5710,lon:-7.9093,buyM2:2100,rentM2:11.2,rentT2:[500,750],trend:"+11.7%",climate:["hot"],tags:["quiet"],expat:2,transport:2,nature:4,beach:0,healthcare:3,airport:2,schools:3,quiet:5,culture:3,pros:["UNESCO site","Vineyards","Very affordable"],cons:["Inland","Hot summers"],notes:"World Heritage city. Authentic Portuguese life."},
+  {name:"Comporta / Grândola",region:"Alentejo Coast",district:"Setúbal",lat:38.3800,lon:-8.7850,buyM2:3500,rentM2:14,rentT2:[900,1400],trend:"+18.0%",climate:["hot"],tags:["beach","quiet"],expat:3,transport:1,nature:5,beach:5,healthcare:2,airport:3,schools:1,quiet:5,culture:1,pros:["Stunning empty beaches","Fashionable","Growing luxury"],cons:["Remote","Car essential","Getting expensive"],notes:"The new Algarve. Rapid price growth."},
+  {name:"Beja (city)",region:"Alentejo",district:"Beja",lat:38.0150,lon:-7.8631,buyM2:1500,rentM2:7.5,rentT2:[400,600],trend:"+30.6%",climate:["hot"],tags:["quiet"],expat:1,transport:1,nature:4,beach:0,healthcare:3,airport:1,schools:2,quiet:5,culture:1,pros:["Very cheap","Safe","Authentic"],cons:["Remote","No expat community"],notes:"Biggest price growth in Alentejo."},
+  {name:"Funchal (Madeira)",region:"Madeira",district:"Madeira",lat:32.6669,lon:-16.9241,buyM2:3473,rentM2:15.5,rentT2:[1200,1700],trend:"+7.2%",climate:["subtropical"],tags:["urban","quiet"],expat:4,transport:3,nature:5,beach:2,healthcare:4,airport:4,schools:3,quiet:3,culture:3,pros:["Subtropical climate","Digital nomad hub","Nature"],cons:["Island (flights only)","Prices rising"],notes:"Digital Nomad hub. Mild climate all year."},
+  {name:"Ponta do Sol (Madeira)",region:"Madeira",district:"Madeira",lat:32.6833,lon:-17.0666,buyM2:2800,rentM2:11,rentT2:[800,1100],trend:"+6.0%",climate:["subtropical"],tags:["quiet"],expat:3,transport:2,nature:5,beach:2,healthcare:2,airport:3,schools:2,quiet:5,culture:1,pros:["Digital Nomad Village","Sunniest spot","Calm"],cons:["Small","Car needed"],notes:"Active digital nomad community."},
+  {name:"Ponta Delgada (Azores)",region:"Azores",district:"Azores",lat:37.7483,lon:-25.6666,buyM2:2348,rentM2:10.9,rentT2:[600,900],trend:"+12.8%",climate:["subtropical"],tags:["quiet"],expat:2,transport:2,nature:5,beach:3,healthcare:3,airport:4,schools:3,quiet:4,culture:2,pros:["Exceptional nature","Affordable","Safe"],cons:["Island","Frequent rain","Remote"],notes:"Azores capital. Low-cost flights to Europe."},
+  {name:"Castelo Branco",region:"Beira Baixa",district:"C. Branco",lat:39.8223,lon:-7.4931,buyM2:1045,rentM2:6.8,rentT2:[350,550],trend:"+10.4%",climate:["hot"],tags:["quiet"],expat:1,transport:1,nature:4,beach:0,healthcare:3,airport:1,schools:2,quiet:5,culture:1,pros:["Very cheap","Emerging tech hub","Safe"],cons:["Deep interior","No expats"],notes:"Among the most affordable in Portugal."},
+  {name:"Guarda",region:"Beira Alta",district:"Guarda",lat:40.5370,lon:-7.2672,buyM2:1032,rentM2:6.5,rentT2:[300,500],trend:"+22.2%",climate:["oceanic"],tags:["quiet"],expat:1,transport:1,nature:5,beach:0,healthcare:3,airport:1,schools:2,quiet:5,culture:1,pros:["Cheapest in Portugal","Serra da Estrela","Snow"],cons:["Cold","Remote","No expats"],notes:"Highest city in Portugal. Near ski area."},
+  {name:"Bragança",region:"Trás-os-Montes",district:"Bragança",lat:41.8061,lon:-6.7567,buyM2:1104,rentM2:6,rentT2:[300,500],trend:"+7.0%",climate:["oceanic"],tags:["quiet"],expat:1,transport:1,nature:5,beach:0,healthcare:3,airport:1,schools:2,quiet:5,culture:1,pros:["Very cheap","Nature","Gastronomy"],cons:["Cold","Very remote"],notes:"Trás-os-Montes. Authentic rural Portugal."}
+];
+
+// ============ LOAD CONCELHOS DATA ============
+// concelhos.js will be loaded via module script and assigned to window.CONCELHOS
+// Code below will check if window.CONCELHOS exists, if not use fallback places array
+
+// ============ PLATFORM LINKS BY REGION ============
+const platformsByRegion = {
+  "Lisboa": {idealista:"lisboa",imovirtual:"lisboa",casasapo:"lisboa"},
+  "Porto": {idealista:"porto",imovirtual:"porto",casasapo:"porto"},
+  "Norte": {idealista:"porto",imovirtual:"porto",casasapo:"porto"},
+  "Centro": {idealista:"covilha",imovirtual:"covilha",casasapo:"covilha"},
+  "Algarve": {idealista:"faro-distrito",imovirtual:"faro",casasapo:"faro"},
+  "Alentejo": {idealista:"evora",imovirtual:"evora",casasapo:"evora"},
+  "Alentejo Litoral": {idealista:"setubal",imovirtual:"setubal",casasapo:"setubal"},
+  "Beira Alta": {idealista:"guarda",imovirtual:"guarda",casasapo:"guarda"},
+  "Beira Interior": {idealista:"covilha",imovirtual:"covilha",casasapo:"covilha"},
+  "Madeira": {idealista:"ilha-da-madeira",imovirtual:"madeira",casasapo:"madeira"},
+  "Açores": {idealista:"acores",imovirtual:"acores",casasapo:"acores"},
+  // Fallback for legacy region names
+  "Cascais": {idealista:"cascais",imovirtual:"cascais",casasapo:"cascais"},
+  "Oeiras": {idealista:"oeiras",imovirtual:"oeiras",casasapo:"oeiras"},
+  "Almada": {idealista:"almada",imovirtual:"almada",casasapo:"almada"},
+  "Sintra": {idealista:"sintra",imovirtual:"sintra",casasapo:"sintra"},
+  "Odivelas": {idealista:"odivelas",imovirtual:"odivelas",casasapo:"odivelas"},
+  "Barreiro": {idealista:"barreiro",imovirtual:"barreiro",casasapo:"barreiro"},
+  "Setúbal": {idealista:"setubal",imovirtual:"setubal",casasapo:"setubal"},
+  "Braga": {idealista:"braga",imovirtual:"braga",casasapo:"braga"},
+  "Minho": {idealista:"viana-do-castelo",imovirtual:"viana-do-castelo",casasapo:"viana-do-castelo"},
+  "Aveiro": {idealista:"aveiro",imovirtual:"aveiro",casasapo:"aveiro"},
+  "Coimbra": {idealista:"coimbra",imovirtual:"coimbra",casasapo:"coimbra"},
+  "Silver Coast": {idealista:"leiria",imovirtual:"leiria",casasapo:"leiria"},
+  "Alentejo Coast": {idealista:"setubal",imovirtual:"setubal",casasapo:"setubal"},
+  "Beira Baixa": {idealista:"castelo-branco",imovirtual:"castelo-branco",casasapo:"castelo-branco"},
+  "Trás-os-Montes": {idealista:"braganca",imovirtual:"braganca",casasapo:"braganca"},
+  "Azores": {idealista:"acores",imovirtual:"acores",casasapo:"acores"}
+};
+
+// ============ STATE ============
+let answers = { mode:null, rentBudget:1200, buyBudget:250000, household:null, schoolPref:null, mobility:null, work:null, climate:null, priorities:[] };
+var totalSteps = 8;
+let currentLang = 'en';
+let showingMoreResults = false;
+
+// Use CONCELHOS from concelhos.js if available, otherwise fall back to places array
+var placesData = window.CONCELHOS || places;
+
+// Normalize place data to ensure ratings are at top level (handles both old and new data structures)
+function normalizePlace(p) {
+  if (!p.normalized) {
+    // Convert rentT2 from {min, max} to [min, max] if needed
+    if (p.rentT2 && typeof p.rentT2 === 'object' && !Array.isArray(p.rentT2)) {
+      p.rentT2 = [p.rentT2.min, p.rentT2.max];
+    }
+    // If ratings are nested, flatten them to top level
+    if (p.ratings && typeof p.ratings === 'object') {
+      Object.keys(p.ratings).forEach(function(key) {
+        if (!p.hasOwnProperty(key)) {
+          p[key] = p.ratings[key];
+        }
+      });
+    }
+    // Convert climate string/array to array if needed
+    if (typeof p.climate === 'string') {
+      p.climate = [p.climate];
+    } else if (!Array.isArray(p.climate)) {
+      p.climate = [];
+    }
+    p.normalized = true;
+  }
+  return p;
+}
+
+// ============ HAVERSINE & PROXIMITY ============
+function haversine(lat1, lon1, lat2, lon2) {
+  var R = 6371;
+  var dLat = (lat2 - lat1) * Math.PI / 180;
+  var dLon = (lon2 - lon1) * Math.PI / 180;
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function proximityScore(distKm, hasCar) {
+  var ref = hasCar ? 10 : 3;
+  return 10 / (1 + distKm / ref);
+}
+
+function findClosest(place, facilities, count) {
+  var results = facilities.map(function(f) {
+    return {name: f.name, dist: haversine(place.lat, place.lon, f.lat, f.lon), facility: f};
+  });
+  results.sort(function(a, b) { return a.dist - b.dist; });
+  return results.slice(0, count || 1);
+}
+
+function drivingTime(distKm) {
+  return Math.round(distKm * 1.3 / 50 * 60);
+}
+
+// ============ I18N ============
+const i18n = {
+  en: {
+    hTitle: "Portugal Expat Guide", hSubtitle: "Answer 8 simple questions and discover the best places to live in Portugal.",
+    s1title: "1. Are you looking to rent or buy?", rent_label: "Rent", buy_label: "Buy",
+    s2title: "2. What is your budget?",
+    s3title: "3. Who are you moving with?",
+    solo_label: "Just me", couple_label: "Couple", family_label: "Family with children", retired_label: "Retired / semi-retired",
+    s4title: "4. What type of school are you looking for?", s4sub: "This helps us find areas near the right schools for your family.",
+    school_intl_label: "International school", school_pt_label: "Portuguese public school", school_undecided_label: "Not sure yet",
+    school_info_btn: "ℹ️ What's the difference?",
+    school_intl_title: "International Schools",
+    school_intl_1: "Tuition: €5,000–€22,000/year",
+    school_intl_2: "IB, British, American, French or German curriculum",
+    school_intl_3: "Smaller classes (15-20 students)",
+    school_intl_4: "English (or other) as primary language",
+    school_intl_5: "Often until 3:30-4:00 PM",
+    school_pt_title: "Portuguese Public Schools",
+    school_pt_1: "Free (state-funded)",
+    school_pt_2: "Portuguese national curriculum",
+    school_pt_3: "Larger classes (25-30 students)",
+    school_pt_4: "Portuguese as primary language",
+    school_pt_5: "Usually until 3:30 PM, some until 5:30 PM with ATL",
+    s5title: "5. Will you have a car in Portugal?", s5sub: "This affects how we weight distance to schools and hospitals.",
+    car_label: "Yes, I'll have a car", public_label: "Public transport only", maybe_car_label: "Not sure yet",
+    s6title: "6. What is your work situation?",
+    remote_label: "Remote work", localjob_label: "Need a local job", pension_label: "Pension / passive income",
+    entrepreneur_label: "Entrepreneur / freelance", student_label: "Student / researcher",
+    s7title: "7. What kind of weather do you prefer?",
+    hot_label: "Lots of sun and heat", hot_hint: "Algarve, Alentejo",
+    mild_label: "Warm but not too hot", mild_hint: "Lisbon, central coast",
+    oceanic_label: "I don't mind rain and cooler weather", oceanic_hint: "Porto, northern Portugal",
+    subtropical_label: "Mild all year, like an eternal spring", subtropical_hint: "Madeira, Azores",
+    any_label: "Not a priority",
+    s8title: "8. What matters most to you?", s8sub: "Choose up to 5 priorities.",
+    pbeach_label: "Close to the coast", pculture_label: "Culture and nightlife", pschools_label: "Good schools",
+    phealthcare_label: "Healthcare nearby", pairport_label: "Close to an airport", ptransport_label: "Public transport",
+    pnature_label: "Nature and space", pquiet_label: "Peace and quiet", pexpat_label: "Expat community",
+    pgastronomia_label: "Good food and wine", pvidaNocturna_label: "Nightlife and social scene",
+    ppraiasFluviais_label: "River beaches", pinfantil_label: "Family-friendly",
+    next_btn: "Next →", prev_btn: "← Back", results_btn: "See recommendations →", restart_btn: "← Start over",
+    rTitle: "Your personalised recommendations", rSub: "Ranked by how well each area matches your profile.",
+    matchHigh: "Excellent", matchMed: "Good match", matchLow: "Possible",
+    budget_rent_note: "Monthly rent only \u2014 does not include utilities, food, transport or other living costs.",
+    no_affordable: "No areas found within your budget",
+    no_affordable_msg: "None of the 76 municipalities in our database fit within your budget (we allow up to 25% above). Try the suggestions above, or restart with a higher budget.",
+    lbl_buy: "Price/m\u00b2", lbl_buy_est: "Est. 80m\u00b2 apartment", lbl_rent: "Rent (2-bed)", lbl_rent_m2: "Rent/m\u00b2",    found: "areas found for your profile",
+    sum_mode: "Looking to", sum_budget: "Budget", sum_household: "Household", sum_work: "Work", sum_climate: "Climate", sum_mobility: "Mobility", sum_school: "School",
+    household_labels: {solo:"Solo",couple:"Couple",family:"Family",retired:"Retired"},
+    work_labels: {remote:"Remote work",local_job:"Local job",pension:"Pension",entrepreneur:"Entrepreneur",student:"Student"},
+    climate_labels: {hot:"Hot and sunny",mild:"Warm and mild",oceanic:"Cooler and green",subtropical:"Eternal spring",any:"Any"},
+    mode_labels: {rent:"Rent",buy:"Buy"},
+    mobility_labels: {car:"With car",public:"Public transport",maybe:"Undecided"},
+    school_labels: {international:"International",portuguese:"Portuguese",undecided:"Undecided"},
+    exitTitle: "What would you like to do next?",
+    exit_help_title: "I want help", exit_help_desc: "Get assistance with property visits, paperwork, NIF, bank accounts, or contract signing.",
+    exit_explore_title: "I'll explore on my own", exit_explore_desc: "Browse listings directly on the main Portuguese property platforms.",
+    help_heading: "We can help you every step of the way",
+    help_text: "From finding the right property to handling all the bureaucracy. Our services include property visits (in person or virtual), NIF registration, opening a bank account, contract review, and signing with power of attorney.",
+    explore_heading: "Search listings on these platforms", explore_for: "Showing links for your top matches",
+    platform_idealista: "Idealista", platform_imovirtual: "Imovirtual", platform_casasapo: "Casa Sapo",
+    show_more: "Show more results", show_less: "Show fewer results",
+    prox_pub_hospital: "Public hospital", prox_priv_hospital: "Private clinic", prox_school: "School", prox_minutes: "min drive",
+    mismatch_title: "Champagne taste, beer budget?",
+    mismatch_sub: "We couldn't find a perfect match — but we have some ideas. Pick an option below and we'll recalculate.",
+    mismatch_budget_title: "Stretch the budget a little",
+    mismatch_budget_desc: "With a budget of {budget}, strong matches start appearing.",
+    mismatch_rent_desc: "At {budget}, strong matches open up.",
+    mismatch_budget_preview: "→ Best match: {place} ({score}%)",
+    mismatch_priority_title: "Let go of one priority",
+    mismatch_priority_desc: "Dropping \"{priority}\" from your requirements opens up new areas.",
+    mismatch_priority_preview: "→ Best match: {place} ({score}%)",
+    mismatch_rent_title: "Consider renting instead",
+    mismatch_rent_switch_desc: "With a monthly budget of around {budget}, you'd get access to areas that match your other criteria.",
+    mismatch_rent_preview: "→ Best match: {place} ({score}%)",
+    mismatch_climate_title: "Be open to any climate",
+    mismatch_climate_desc: "Portugal has great weather everywhere — relaxing this filter reveals much better matches.",
+    mismatch_climate_preview: "→ Best match: {place} ({score}%)"
+  },
+  fr: {
+    hTitle: "Portugal Expat Guide", hSubtitle: "Répondez à 8 questions simples et découvrez les meilleurs endroits pour vivre au Portugal.",
+    s1title: "1. Vous cherchez à louer ou acheter ?", rent_label: "Louer", buy_label: "Acheter",
+    s2title: "2. Quel est votre budget ?",
+    s3title: "3. Avec qui déménagez-vous ?",
+    solo_label: "Seul(e)", couple_label: "En couple", family_label: "Famille avec enfants", retired_label: "Retraité(e)",
+    s4title: "4. Quel type d'école recherchez-vous ?", s4sub: "Cela nous aide à trouver des zones proches des bonnes écoles pour votre famille.",
+    school_intl_label: "École internationale", school_pt_label: "École publique portugaise", school_undecided_label: "Pas encore décidé",
+    school_info_btn: "ℹ️ Quelle est la différence ?",
+    school_intl_title: "Écoles internationales",
+    school_intl_1: "Frais: 5 000 €–22 000 €/an",
+    school_intl_2: "Programme IB, britannique, américain, français ou allemand",
+    school_intl_3: "Classes plus petites (15-20 élèves)",
+    school_intl_4: "Anglais (ou autre) comme langue principale",
+    school_intl_5: "Souvent jusqu'à 15h30-16h00",
+    school_pt_title: "Écoles publiques portugaises",
+    school_pt_1: "Gratuites (financées par l'État)",
+    school_pt_2: "Programme national portugais",
+    school_pt_3: "Classes plus grandes (25-30 élèves)",
+    school_pt_4: "Portugais comme langue principale",
+    school_pt_5: "Habituellement jusqu'à 15h30, certaines jusqu'à 17h30 avec ATL",
+    s5title: "5. Aurez-vous une voiture au Portugal ?", s5sub: "Cela influence l'importance de la distance aux écoles et hôpitaux.",
+    car_label: "Oui, j'aurai une voiture", public_label: "Transports en commun uniquement", maybe_car_label: "Pas encore sûr(e)",
+    s6title: "6. Quelle est votre situation professionnelle ?",
+    remote_label: "Télétravail", localjob_label: "Emploi local", pension_label: "Retraite / revenus passifs",
+    entrepreneur_label: "Entrepreneur / freelance", student_label: "Étudiant / chercheur",
+    s7title: "7. Quel type de climat préférez-vous ?",
+    hot_label: "Beaucoup de soleil et chaleur", hot_hint: "Algarve, Alentejo",
+    mild_label: "Chaud mais pas trop", mild_hint: "Lisbonne, côte centrale",
+    oceanic_label: "La pluie et le frais ne me dérangent pas", oceanic_hint: "Porto, nord du Portugal",
+    subtropical_label: "Doux toute l'année, un printemps éternel", subtropical_hint: "Madère, Açores",
+    any_label: "Pas une priorité",
+    s8title: "8. Qu'est-ce qui compte le plus pour vous ?", s8sub: "Choisissez jusqu'à 5 priorités.",
+    pbeach_label: "Proche du littoral", pculture_label: "Culture et vie nocturne", pschools_label: "Bonnes écoles",
+    phealthcare_label: "Santé à proximité", pairport_label: "Près d'un aéroport", ptransport_label: "Transports en commun",
+    pnature_label: "Nature et espace", pquiet_label: "Calme et tranquillité", pexpat_label: "Communauté expat",
+    pgastronomia_label: "Bonne nourriture et vin", pvidaNocturna_label: "Vie nocturne et socialité",
+    ppraiasFluviais_label: "Plages fluviales", pinfantil_label: "Adapté aux familles",
+    next_btn: "Suivant →", prev_btn: "← Retour", results_btn: "Voir les recommandations →", restart_btn: "← Recommencer",
+    rTitle: "Vos recommandations personnalisées", rSub: "Classées par adéquation avec votre profil.",
+    matchHigh: "Excellent", matchMed: "Bon choix", matchLow: "Possible",
+    budget_rent_note: "Loyer mensuel uniquement \u2014 charges, alimentation, transport et autres frais non inclus.",
+    no_affordable: "Aucune zone trouv\u00e9e dans votre budget",
+    no_affordable_msg: "Aucune des 76 municipalit\u00e9s de notre base de donn\u00e9es ne correspond \u00e0 votre budget (nous acceptons jusqu'\u00e0 25% au-dessus). Essayez les suggestions ci-dessus ou recommencez avec un budget plus \u00e9lev\u00e9.",
+    lbl_buy: "Prix/m\u00b2", lbl_buy_est: "Est. appartement 80m\u00b2", lbl_rent: "Loyer (T2)", lbl_rent_m2: "Loyer/m\u00b2",    found: "zones trouv\u00e9es pour votre profil",
+    sum_mode: "Recherche", sum_budget: "Budget", sum_household: "Foyer", sum_work: "Travail", sum_climate: "Climat", sum_mobility: "Mobilité", sum_school: "École",
+    household_labels: {solo:"Seul(e)",couple:"Couple",family:"Famille",retired:"Retraité(e)"},
+    work_labels: {remote:"Télétravail",local_job:"Emploi local",pension:"Retraite",entrepreneur:"Entrepreneur",student:"Étudiant"},
+    climate_labels: {hot:"Chaud et ensoleillé",mild:"Chaud et doux",oceanic:"Frais et vert",subtropical:"Printemps éternel",any:"Indifférent"},
+    mode_labels: {rent:"Louer",buy:"Acheter"},
+    mobility_labels: {car:"Avec voiture",public:"Transports publics",maybe:"Indécis"},
+    school_labels: {international:"International",portuguese:"Portugais",undecided:"Indécis"},
+    exitTitle: "Que souhaitez-vous faire ensuite ?",
+    exit_help_title: "Un coup de main serait bienvenu", exit_help_desc: "Des visites à la paperasse — nous sommes là si besoin.",
+    exit_explore_title: "Je continue seul(e)", exit_explore_desc: "Accédez directement aux plateformes immobilières portugaises.",
+    help_heading: "Nous sommes là quand vous en avez besoin",
+    help_text: "De la recherche du bien idéal à la gestion de toute la bureaucratie. Nos services incluent les visites (en personne ou virtuelles), l'inscription au NIF, l'ouverture d'un compte bancaire, la révision de contrats et la signature par procuration.",
+    explore_heading: "Rechercher des annonces sur ces plateformes", explore_for: "Liens pour vos meilleures correspondances",
+    platform_idealista: "Idealista", platform_imovirtual: "Imovirtual", platform_casasapo: "Casa Sapo",
+    show_more: "Voir plus de résultats", show_less: "Voir moins de résultats",
+    prox_pub_hospital: "Hôpital public", prox_priv_hospital: "Clinique privée", prox_school: "École", prox_minutes: "min en voiture",
+    mismatch_title: "Goûts de champagne, budget bière ?",
+    mismatch_sub: "Pas de correspondance parfaite — mais nous avons quelques idées. Choisissez une option et nous recalculerons.",
+    mismatch_budget_title: "Augmenter un peu le budget",
+    mismatch_budget_desc: "Avec un budget de {budget}, de bons résultats apparaissent.",
+    mismatch_rent_desc: "À {budget}, de bonnes options s'ouvrent.",
+    mismatch_budget_preview: "→ Meilleur résultat : {place} ({score}%)",
+    mismatch_priority_title: "Laisser tomber une priorité",
+    mismatch_priority_desc: "En retirant « {priority} » de vos critères, de nouvelles zones s'ouvrent.",
+    mismatch_priority_preview: "→ Meilleur résultat : {place} ({score}%)",
+    mismatch_rent_title: "Envisager la location",
+    mismatch_rent_switch_desc: "Avec un budget mensuel d'environ {budget}, vous accédez aux zones qui correspondent à vos autres critères.",
+    mismatch_rent_preview: "→ Meilleur résultat : {place} ({score}%)",
+    mismatch_climate_title: "Être ouvert à tout climat",
+    mismatch_climate_desc: "Le Portugal a un bon climat partout — relâcher ce filtre révèle de bien meilleurs résultats.",
+    mismatch_climate_preview: "→ Meilleur résultat : {place} ({score}%)"
+  },
+  pt: {
+    hTitle: "Portugal Expat Guide", hSubtitle: "Responda a 8 perguntas simples e descubra os melhores locais para viver em Portugal.",
+    s1title: "1. Procura arrendar ou comprar?", rent_label: "Arrendar", buy_label: "Comprar",
+    s2title: "2. Qual é o seu orçamento?",
+    s3title: "3. Com quem se vai mudar?",
+    solo_label: "Sozinho(a)", couple_label: "Casal", family_label: "Família com filhos", retired_label: "Reformado(a)",
+    s4title: "4. Que tipo de escola procura?", s4sub: "Isto ajuda-nos a encontrar zonas perto das escolas certas para a sua família.",
+    school_intl_label: "Escola internacional", school_pt_label: "Escola pública portuguesa", school_undecided_label: "Ainda não sei",
+    school_info_btn: "ℹ️ Qual é a diferença?",
+    school_intl_title: "Escolas Internacionais",
+    school_intl_1: "Propinas: €5.000–€22.000/ano",
+    school_intl_2: "Currículo IB, britânico, americano, francês ou alemão",
+    school_intl_3: "Turmas mais pequenas (15-20 alunos)",
+    school_intl_4: "Inglês (ou outro) como língua principal",
+    school_intl_5: "Geralmente até às 15:30-16:00",
+    school_pt_title: "Escolas Públicas Portuguesas",
+    school_pt_1: "Gratuitas (financiadas pelo Estado)",
+    school_pt_2: "Currículo nacional português",
+    school_pt_3: "Turmas maiores (25-30 alunos)",
+    school_pt_4: "Português como língua principal",
+    school_pt_5: "Normalmente até às 15:30, algumas até às 17:30 com ATL",
+    s5title: "5. Vai ter carro em Portugal?", s5sub: "Isto influencia o peso da distância a escolas e hospitais.",
+    car_label: "Sim, vou ter carro", public_label: "Apenas transportes públicos", maybe_car_label: "Ainda não sei",
+    s6title: "6. Qual é a sua situação profissional?",
+    remote_label: "Trabalho remoto", localjob_label: "Preciso de emprego local", pension_label: "Pensão / rendimentos passivos",
+    entrepreneur_label: "Empresário / freelancer", student_label: "Estudante / investigador",
+    s7title: "7. Que tipo de clima prefere?",
+    hot_label: "Muito sol e calor", hot_hint: "Algarve, Alentejo",
+    mild_label: "Quente mas não demasiado", mild_hint: "Lisboa, costa central",
+    oceanic_label: "Não me importo com chuva e fresco", oceanic_hint: "Porto, norte de Portugal",
+    subtropical_label: "Ameno todo o ano, como uma primavera eterna", subtropical_hint: "Madeira, Açores",
+    any_label: "Não é prioridade",
+    s8title: "8. O que é mais importante para si?", s8sub: "Escolha até 5 prioridades.",
+    pbeach_label: "Perto do litoral", pculture_label: "Cultura e vida nocturna", pschools_label: "Boas escolas",
+    phealthcare_label: "Saúde por perto", pairport_label: "Perto de um aeroporto", ptransport_label: "Transportes públicos",
+    pnature_label: "Natureza e espaço", pquiet_label: "Paz e sossego", pexpat_label: "Comunidade expat",
+    pgastronomia_label: "Boa gastronomia e vinho", pvidaNocturna_label: "Vida nocturna ativa",
+    ppraiasFluviais_label: "Praias fluviais", pinfantil_label: "Amigo das famílias",
+    next_btn: "Seguinte →", prev_btn: "← Anterior", results_btn: "Ver recomendações →", restart_btn: "← Começar de novo",
+    rTitle: "As suas recomendações personalizadas", rSub: "Ordenadas por aderência ao que procura.",
+    matchHigh: "Excelente", matchMed: "Boa opção", matchLow: "Possível",
+    budget_rent_note: "Valor mensal s\u00f3 de renda \u2014 n\u00e3o inclui despesas, alimenta\u00e7\u00e3o, transportes ou outros custos de vida.",
+    no_affordable: "Nenhuma zona encontrada dentro do seu or\u00e7amento",
+    no_affordable_msg: "Nenhum dos 76 concelhos da nossa base de dados cabe no seu or\u00e7amento (aceitamos at\u00e9 25% acima). Experimente as sugest\u00f5es acima ou recomece com um or\u00e7amento mais elevado.",
+    lbl_buy: "Pre\u00e7o/m\u00b2", lbl_buy_est: "Est. apartamento 80m\u00b2", lbl_rent: "Renda (T2)", lbl_rent_m2: "Renda/m\u00b2",    found: "zonas encontradas para o seu perfil",
+    sum_mode: "Procura", sum_budget: "Orçamento", sum_household: "Agregado", sum_work: "Trabalho", sum_climate: "Clima", sum_mobility: "Mobilidade", sum_school: "Escola",
+    household_labels: {solo:"Sozinho(a)",couple:"Casal",family:"Família",retired:"Reformado(a)"},
+    work_labels: {remote:"Trabalho remoto",local_job:"Emprego local",pension:"Pensão",entrepreneur:"Empresário",student:"Estudante"},
+    climate_labels: {hot:"Quente e soalheiro",mild:"Quente e ameno",oceanic:"Fresco e verde",subtropical:"Primavera eterna",any:"Indiferente"},
+    mode_labels: {rent:"Arrendar",buy:"Comprar"},
+    mobility_labels: {car:"Com carro",public:"Transportes públicos",maybe:"Indeciso"},
+    school_labels: {international:"Internacional",portuguese:"Português",undecided:"Indeciso"},
+    exitTitle: "O que gostaria de fazer a seguir?",
+    exit_help_title: "Dava-me jeito uma ajuda", exit_help_desc: "Das visitas à papelada — estamos cá se precisar.",
+    exit_explore_title: "Daqui em diante sigo sozinho(a)", exit_explore_desc: "Aceda directamente às principais plataformas imobiliárias portuguesas.",
+    help_heading: "Estamos cá quando precisar",
+    help_text: "Desde encontrar o imóvel certo até tratar de toda a burocracia. Os nossos serviços incluem visitas a imóveis (presenciais ou virtuais), registo de NIF, abertura de conta bancária, revisão de contratos e assinatura com procuração.",
+    explore_heading: "Procurar anúncios nestas plataformas", explore_for: "Links para as suas melhores correspondências",
+    platform_idealista: "Idealista", platform_imovirtual: "Imovirtual", platform_casasapo: "Casa Sapo",
+    show_more: "Ver mais resultados", show_less: "Ver menos resultados",
+    prox_pub_hospital: "Hospital público", prox_priv_hospital: "Clínica privada", prox_school: "Escola", prox_minutes: "min de carro",
+    mismatch_title: "Gosto champanhe, orçamento cerveja?",
+    mismatch_sub: "Não encontrámos uma correspondência perfeita — mas temos algumas ideias. Escolha uma opção e recalculamos.",
+    mismatch_budget_title: "Esticar um pouco o orçamento",
+    mismatch_budget_desc: "Com um orçamento de {budget}, começam a surgir boas opções.",
+    mismatch_rent_desc: "A {budget}, surgem boas opções.",
+    mismatch_budget_preview: "→ Melhor resultado: {place} ({score}%)",
+    mismatch_priority_title: "Abdicar de uma prioridade",
+    mismatch_priority_desc: "Se retirar \"{priority}\" dos seus requisitos, surgem novas zonas.",
+    mismatch_priority_preview: "→ Melhor resultado: {place} ({score}%)",
+    mismatch_rent_title: "Considerar arrendar",
+    mismatch_rent_switch_desc: "Com um orçamento mensal de cerca de {budget}, teria acesso a zonas que correspondem aos seus outros critérios.",
+    mismatch_rent_preview: "→ Melhor resultado: {place} ({score}%)",
+    mismatch_climate_title: "Abrir a qualquer clima",
+    mismatch_climate_desc: "Portugal tem bom clima em todo o lado — relaxar este filtro revela resultados muito melhores.",
+    mismatch_climate_preview: "→ Melhor resultado: {place} ({score}%)"
+  }
+};
+
+function t(key) { return i18n[currentLang][key] || key; }
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-bar button').forEach(b => b.classList.remove('active'));
+  document.querySelector('.lang-bar button[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+  ['hTitle','hSubtitle','s1title','s2title','s3title','s4title','s4sub','s5title','s5sub','s6title','s7title','s8title','s8sub','rTitle','rSub','exitTitle'].forEach(id => {
+    var el = document.getElementById(id);
+    if (el) el.textContent = t(id);
+  });
+  document.querySelectorAll('[data-t]').forEach(el => {
+    var key = el.getAttribute('data-t');
+    var val = t(key);
+    if (val && val !== key) el.textContent = val;
+  });
+}
+
+// ============ UI ============
+function initDots() {
+  var c = document.getElementById('stepDots');
+  c.innerHTML = '';
+  for (var i = 1; i <= totalSteps; i++) {
+    var d = document.createElement('div');
+    d.className = 'step-dot' + (i === 1 ? ' active' : '');
+    d.textContent = i;
+    d.id = 'dot' + i;
+    c.appendChild(d);
+  }
+}
+initDots();
+
+document.getElementById('rentBudget').addEventListener('input', function(e) {
+  answers.rentBudget = parseInt(e.target.value);
+  document.getElementById('rentBudgetDisplay').textContent = '€' + answers.rentBudget.toLocaleString('en') + '/month';
+});
+document.getElementById('buyBudget').addEventListener('input', function(e) {
+  answers.buyBudget = parseInt(e.target.value);
+  document.getElementById('buyBudgetDisplay').textContent = '€' + answers.buyBudget.toLocaleString('en');
+});
+
+function selectOne(el, key) {
+  el.parentElement.querySelectorAll('.option').forEach(function(o) { o.classList.remove('selected'); });
+  el.classList.add('selected');
+  answers[key] = el.dataset.value;
+  if (key === 'mode') {
+    document.getElementById('rentBudgetWrap').style.display = answers.mode === 'rent' ? 'block' : 'none';
+    document.getElementById('buyBudgetWrap').style.display = answers.mode === 'buy' ? 'block' : 'none';
+  }
+  var btnMap = {mode:'btn1', household:'btn3', schoolPref:'btn4', mobility:'btn5', work:'btn6', climate:'btn7'};
+  if (btnMap[key]) document.getElementById(btnMap[key]).disabled = false;
+}
+
+function toggleMulti(el, key) {
+  if (!el.classList.contains('selected')) {
+    if (el.parentElement.querySelectorAll('.option.selected').length >= 5) return;
+  }
+  el.classList.toggle('selected');
+  answers[key] = [].slice.call(el.parentElement.querySelectorAll('.option.selected')).map(function(o) { return o.dataset.value; });
+  if (key === 'priorities') document.getElementById('btn8').disabled = answers.priorities.length === 0;
+}
+
+function toggleSchoolInfo() {
+  var box = document.getElementById('schoolInfoBox');
+  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+}
+
+function showStep(n) {
+  document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('step' + n).classList.add('active');
+  for (var i = 1; i <= totalSteps; i++) {
+    var d = document.getElementById('dot' + i);
+    d.className = 'step-dot' + (i === n ? ' active' : i < n ? ' done' : '');
+  }
+  window.scrollTo(0, 0);
+}
+
+function next(n) {
+  var target = n + 1;
+  if (target === 4 && answers.household !== 'family') {
+    target = 5;
+  }
+  showStep(target);
+}
+
+function prev(n) {
+  var target = n - 1;
+  if (target === 4 && answers.household !== 'family') {
+    target = 3;
+  }
+  showStep(target);
+}
+
+function restart() {
+  answers = { mode:null, rentBudget:1200, buyBudget:250000, household:null, schoolPref:null, mobility:null, work:null, climate:null, priorities:[] };
+  document.getElementById('rentBudget').value = 1200;
+  document.getElementById('rentBudgetDisplay').textContent = '€1,200/month';
+  document.getElementById('buyBudget').value = 250000;
+  document.getElementById('buyBudgetDisplay').textContent = '€250,000';
+  document.getElementById('rentBudgetWrap').style.display = 'block';
+  document.getElementById('buyBudgetWrap').style.display = 'none';
+  document.querySelectorAll('.option.selected').forEach(function(o) { o.classList.remove('selected'); });
+  ['btn1','btn3','btn4','btn5','btn6','btn7','btn8'].forEach(function(id) { document.getElementById(id).disabled = true; });
+  document.getElementById('helpPanel').classList.remove('visible');
+  document.getElementById('explorePanel').classList.remove('visible');
+  document.getElementById('showMoreBtn').style.display = 'none';
+  showingMoreResults = false;
+  showStep(1);
+  initDots();
+}
+
+// ============ EXIT PATH ============
+function showHelp() {
+  document.getElementById('helpPanel').classList.add('visible');
+  document.getElementById('explorePanel').classList.remove('visible');
+}
+
+function showExplore() {
+  document.getElementById('explorePanel').classList.add('visible');
+  document.getElementById('helpPanel').classList.remove('visible');
+  buildPlatformLinks();
+}
+
+function createPlatformLink(url, iconEmoji, platformName) {
+  var link = document.createElement('a');
+  link.className = 'platform-link';
+  link.href = url;
+  link.target = '_blank';
+  link.setAttribute('rel', 'noopener noreferrer');
+  var icon = document.createElement('span');
+  icon.className = 'picon';
+  icon.textContent = iconEmoji;
+  link.appendChild(icon);
+  var text = document.createTextNode(' ' + platformName);
+  link.appendChild(text);
+  return link;
+}
+
+function buildPlatformLinks() {
+  var container = document.getElementById('platformLinks');
+  container.textContent = '';
+  var scored = placesData.map(function(p) { return { region: p.region, score: scorePlace(p) }; });
+  scored.sort(function(a, b) { return b.score - a.score; });
+  var seen = {};
+  var topRegions = [];
+  scored.forEach(function(item) {
+    if (!seen[item.region] && topRegions.length < 3) {
+      seen[item.region] = true;
+      topRegions.push(item.region);
+    }
+  });
+
+  var modeSlug = answers.mode === 'rent' ? 'arrendar' : 'comprar';
+  topRegions.forEach(function(region) {
+    var mapping = platformsByRegion[region];
+    if (!mapping) return;
+
+    var regionLabel = document.createElement('div');
+    regionLabel.style.cssText = 'grid-column:1/-1;font-weight:600;color:#1F4E79;margin-top:0.5rem;font-size:0.95rem;';
+    regionLabel.textContent = region;
+    container.appendChild(regionLabel);
+
+    if (mapping.idealista) {
+      var url1 = 'https://www.idealista.pt/' + modeSlug + '-casas/' + mapping.idealista + '/';
+      container.appendChild(createPlatformLink(url1, '🏠', t('platform_idealista')));
+    }
+    if (mapping.imovirtual) {
+      var url2 = 'https://www.imovirtual.com/' + modeSlug + '/' + mapping.imovirtual + '/';
+      container.appendChild(createPlatformLink(url2, '💻', t('platform_imovirtual')));
+    }
+    if (mapping.casasapo) {
+      var url3 = 'https://casa.sapo.pt/' + (answers.mode === 'rent' ? 'Alugar' : 'Comprar') + '-Apartamentos-' + mapping.casasapo + '/';
+      container.appendChild(createPlatformLink(url3, '🔍', t('platform_casasapo')));
+    }
+  });
+}
+
+// ============ SCORING ============
+// Scoring algorithm: compares a place (p) against user's answers
+// Returns percentage 0-100. Each component has a maximum score and weights user preferences.
+// Components: Budget (20%), Climate (10%), Household type (10%), Work situation (10%),
+// Schools (5-25% depending on household), Healthcare (10-25% depending on household),
+// Priorities (15%)
+function scorePlace(p) {
+  p = normalizePlace(p);
+  var score = 0, max = 0;
+  var avgRent = (p.rentT2[0] + p.rentT2[1]) / 2;
+
+  // Budget (20%): How well the place fits user's budget
+  max += 20;
+  if (answers.mode === 'rent') {
+    if (avgRent <= answers.rentBudget) score += 20;
+    else if (avgRent <= answers.rentBudget * 1.15) score += 12;
+    else if (avgRent <= answers.rentBudget * 1.3) score += 4;
+  } else {
+    var canAffordM2 = answers.buyBudget / 80;
+    if (p.buyM2 <= canAffordM2) score += 20;
+    else if (p.buyM2 <= canAffordM2 * 1.2) score += 12;
+    else if (p.buyM2 <= canAffordM2 * 1.5) score += 4;
+  }
+
+  // Climate (10%)
+  max += 10;
+  if (answers.climate === 'any' || p.climate.includes(answers.climate)) score += 10;
+  else score += 2;
+
+  // Household scoring varies
+  max += 10;
+  if (answers.household === 'family') {
+    score += (p.schools >= 4 ? 4 : p.schools >= 3 ? 2 : 0) + (p.healthcare >= 4 ? 3 : p.healthcare >= 3 ? 1 : 0) + (p.quiet >= 3 ? 3 : 1);
+  } else if (answers.household === 'retired') {
+    score += (p.healthcare >= 4 ? 4 : p.healthcare >= 3 ? 2 : 0) + (p.quiet >= 4 ? 3 : p.quiet >= 3 ? 2 : 0) + (p.nature >= 4 ? 3 : p.nature >= 3 ? 1 : 0);
+  } else if (answers.household === 'couple') {
+    score += (p.culture >= 3 ? 3 : 1) + (p.quiet >= 3 ? 4 : 2) + (p.transport >= 3 ? 3 : 0);
+  } else {
+    score += (p.transport >= 3 ? 4 : 2) + (p.culture >= 3 ? 3 : 1) + (p.expat >= 3 ? 3 : 0);
+  }
+
+  // Work (10%)
+  max += 10;
+  if (answers.work === 'remote' || answers.work === 'entrepreneur') {
+    score += (p.expat >= 3 ? 3 : 1) + 4 + (p.transport >= 3 ? 3 : 0);
+  } else if (answers.work === 'local_job') {
+    score += (p.transport >= 4 ? 4 : p.transport >= 3 ? 2 : 0) + (p.tags.indexOf('urban') >= 0 ? 3 : 0) +
+      (['Lisboa','Norte','Centro'].indexOf(p.region) >= 0 ? 3 : 0);
+  } else if (answers.work === 'pension') {
+    score += (p.quiet >= 3 ? 3 : 1) + (p.nature >= 3 ? 4 : 2) + (p.healthcare >= 3 ? 3 : 0);
+  } else if (answers.work === 'student') {
+    score += (p.transport >= 3 ? 3 : 1) + (p.tags.indexOf('urban') >= 0 ? 4 : 0) +
+      (['Lisboa','Norte','Centro'].indexOf(p.region) >= 0 ? 3 : 1);
+  }
+
+  // Schools (0-25% depending on household)
+  if (answers.household === 'family') {
+    max += 25;
+    if (answers.schoolPref === 'international') {
+      var closest = findClosest(p, schools, 1);
+      if (closest.length > 0) {
+        var dist = closest[0].dist;
+        score += Math.max(1, Math.round(proximityScore(dist, answers.mobility === 'car') * 2.5));
+      }
+    } else if (answers.schoolPref === 'portuguese') {
+      score += 8 + (p.schools >= 3 ? 5 : 0) + (p.quiet >= 3 ? 5 : 3) + (p.transport >= 3 ? 7 : 2);
+    } else {
+      var avgScore = (8 + (p.schools >= 3 ? 5 : 0) + (p.quiet >= 3 ? 5 : 3) + (p.transport >= 3 ? 7 : 2) + 
+        Math.max(1, Math.round(proximityScore(findClosest(p, schools, 1)[0] ? findClosest(p, schools, 1)[0].dist : 100, answers.mobility === 'car') * 2.5))) / 2;
+      score += Math.round(avgScore);
+    }
+  } else if (answers.priorities.indexOf('schools') >= 0) {
+    // Non-family: schools only count if user picked "schools" as a priority
+    max += 5;
+    score += (p.schools >= 4 ? 3 : p.schools >= 3 ? 1 : 0);
+  }
+  // else: no school scoring at all for non-families who didn't pick schools
+
+  // Healthcare (10-25% depending on household)
+  if (answers.household === 'retired') {
+    max += 25;
+    var pubHosp = findClosest(p, hospitalsPublic, 1);
+    var privHosp = findClosest(p, hospitalsPrivate, 1);
+    var pubDist = pubHosp.length > 0 ? pubHosp[0].dist : 100;
+    var privDist = privHosp.length > 0 ? privHosp[0].dist : 100;
+    var hasCar = answers.mobility === 'car';
+    score += Math.round((proximityScore(pubDist, hasCar) + proximityScore(privDist, hasCar)) * 1.25);
+  } else {
+    max += 10;
+    var pubH = findClosest(p, hospitalsPublic, 1);
+    score += pubH.length > 0 ? Math.max(1, Math.round(proximityScore(pubH[0].dist, answers.mobility === 'car'))) : 2;
+  }
+
+  // Priorities (15%)
+  if (answers.priorities.length > 0) {
+    var ptsEach = Math.round(15 / answers.priorities.length);
+    max += ptsEach * answers.priorities.length;
+    answers.priorities.forEach(function(pr) {
+      var val = p[pr] || 0;
+      if (val >= 5) score += ptsEach;
+      else if (val >= 4) score += Math.round(ptsEach * 0.75);
+      else if (val >= 3) score += Math.round(ptsEach * 0.5);
+      else if (val >= 2) score += Math.round(ptsEach * 0.25);
+    });
+  }
+
+  return max > 0 ? Math.round(100 * score / max) : 50;
+}
+
+// ============ MISMATCH DETECTION ============
+function checkMismatch(scored) {
+  var bestScore = scored[0] ? scored[0].score : 0;
+  // Mismatch if best result is below 55%
+  if (bestScore >= 55) return null;
+
+  var scenarios = [];
+  var origAnswers = JSON.parse(JSON.stringify(answers));
+
+  // SCENARIO 1: Increase budget (only for buy mode — find minimum budget that gets score >= 60)
+  if (answers.mode === 'buy') {
+    var budgetSteps = [150000, 200000, 250000, 300000, 400000, 500000, 600000, 800000];
+    for (var b = 0; b < budgetSteps.length; b++) {
+      if (budgetSteps[b] <= answers.buyBudget) continue;
+      answers.buyBudget = budgetSteps[b];
+      var testScored = placesData.map(function(p) { return {name: p.name, score: scorePlace(p)}; });
+      testScored.sort(function(a, b) { return b.score - a.score; });
+      if (testScored[0].score >= 55) {
+        scenarios.push({
+          id: 'budget',
+          icon: '💰',
+          titleKey: 'mismatch_budget_title',
+          descKey: 'mismatch_budget_desc',
+          previewKey: 'mismatch_budget_preview',
+          previewData: {budget: '€' + budgetSteps[b].toLocaleString('en'), place: testScored[0].name, score: testScored[0].score},
+          apply: function() {
+            var newBudget = this._budget;
+            answers.buyBudget = newBudget;
+          }
+        });
+        scenarios[scenarios.length - 1]._budget = budgetSteps[b];
+        break;
+      }
+    }
+    answers.buyBudget = origAnswers.buyBudget;
+  }
+  if (answers.mode === 'rent') {
+    var rentSteps = [800, 1000, 1200, 1500, 1800, 2000, 2500, 3000, 3500];
+    for (var r = 0; r < rentSteps.length; r++) {
+      if (rentSteps[r] <= answers.rentBudget) continue;
+      answers.rentBudget = rentSteps[r];
+      var testScored2 = placesData.map(function(p) { return {name: p.name, score: scorePlace(p)}; });
+      testScored2.sort(function(a, b) { return b.score - a.score; });
+      if (testScored2[0].score >= 55) {
+        scenarios.push({
+          id: 'budget',
+          icon: '💰',
+          titleKey: 'mismatch_budget_title',
+          descKey: 'mismatch_rent_desc',
+          previewKey: 'mismatch_budget_preview',
+          previewData: {budget: '€' + rentSteps[r].toLocaleString('en') + '/mo', place: testScored2[0].name, score: testScored2[0].score},
+          apply: function() {
+            answers.rentBudget = this._budget;
+          }
+        });
+        scenarios[scenarios.length - 1]._budget = rentSteps[r];
+        break;
+      }
+    }
+    answers.rentBudget = origAnswers.rentBudget;
+  }
+
+  // SCENARIO 2: Drop each priority one by one and see which one unblocks
+  if (answers.priorities.length > 0) {
+    var bestDropScore = 0;
+    var bestDropPriority = null;
+    var bestDropPlace = null;
+    for (var i = 0; i < answers.priorities.length; i++) {
+      var dropped = answers.priorities[i];
+      var tempPriorities = answers.priorities.filter(function(p) { return p !== dropped; });
+      var savedPriorities = answers.priorities;
+      answers.priorities = tempPriorities;
+      var testScored3 = placesData.map(function(p) { return {name: p.name, score: scorePlace(p)}; });
+      testScored3.sort(function(a, b) { return b.score - a.score; });
+      if (testScored3[0].score > bestDropScore) {
+        bestDropScore = testScored3[0].score;
+        bestDropPriority = dropped;
+        bestDropPlace = testScored3[0].name;
+      }
+      answers.priorities = savedPriorities;
+    }
+    if (bestDropScore >= 50 && bestDropPriority) {
+      var priorityLabels = {
+        beach: t('pbeach_label'), culture: t('pculture_label'), schools: t('pschools_label'),
+        healthcare: t('phealthcare_label'), airport: t('pairport_label'), transport: t('ptransport_label'),
+        nature: t('pnature_label'), quiet: t('pquiet_label'), expat: t('pexpat_label')
+      };
+      scenarios.push({
+        id: 'priority',
+        icon: '🎯',
+        titleKey: 'mismatch_priority_title',
+        descKey: 'mismatch_priority_desc',
+        previewKey: 'mismatch_priority_preview',
+        previewData: {priority: priorityLabels[bestDropPriority] || bestDropPriority, place: bestDropPlace, score: bestDropScore},
+        _priority: bestDropPriority,
+        apply: function() {
+          answers.priorities = answers.priorities.filter(function(p) { return p !== this._priority; }.bind(this));
+        }
+      });
+    }
+  }
+
+  // SCENARIO 3: Consider renting instead (only if mode is buy)
+  if (answers.mode === 'buy') {
+    var monthlyEquiv = Math.round(answers.buyBudget * 0.004); // rough mortgage equivalent
+    if (monthlyEquiv < 300) monthlyEquiv = 300;
+    var savedMode = answers.mode;
+    var savedRent = answers.rentBudget;
+    answers.mode = 'rent';
+    answers.rentBudget = monthlyEquiv;
+    var testScored4 = placesData.map(function(p) { return {name: p.name, score: scorePlace(p)}; });
+    testScored4.sort(function(a, b) { return b.score - a.score; });
+    if (testScored4[0].score >= 50) {
+      scenarios.push({
+        id: 'rent',
+        icon: '🏠',
+        titleKey: 'mismatch_rent_title',
+        descKey: 'mismatch_rent_switch_desc',
+        previewKey: 'mismatch_rent_preview',
+        previewData: {budget: '€' + monthlyEquiv.toLocaleString('en') + '/mo', place: testScored4[0].name, score: testScored4[0].score},
+        _monthlyBudget: monthlyEquiv,
+        apply: function() {
+          answers.mode = 'rent';
+          answers.rentBudget = this._monthlyBudget;
+        }
+      });
+    }
+    answers.mode = savedMode;
+    answers.rentBudget = savedRent;
+  }
+
+  // SCENARIO 4: Relax climate preference
+  if (answers.climate !== 'any') {
+    var savedClimate = answers.climate;
+    answers.climate = 'any';
+    var testScored5 = placesData.map(function(p) { return {name: p.name, score: scorePlace(p)}; });
+    testScored5.sort(function(a, b) { return b.score - a.score; });
+    if (testScored5[0].score >= 55 && testScored5[0].score > bestScore + 10) {
+      scenarios.push({
+        id: 'climate',
+        icon: '🌤️',
+        titleKey: 'mismatch_climate_title',
+        descKey: 'mismatch_climate_desc',
+        previewKey: 'mismatch_climate_preview',
+        previewData: {place: testScored5[0].name, score: testScored5[0].score},
+        apply: function() {
+          answers.climate = 'any';
+        }
+      });
+    }
+    answers.climate = savedClimate;
+  }
+
+  return scenarios.length > 0 ? scenarios : null;
+}
+
+function renderMismatch(scenarios) {
+  var panel = document.getElementById('mismatchPanel');
+  var container = document.getElementById('mismatchScenarios');
+  container.innerHTML = '';
+
+  document.getElementById('mismatchTitle').textContent = t('mismatch_title');
+  document.getElementById('mismatchSub').textContent = t('mismatch_sub');
+
+  scenarios.forEach(function(sc, idx) {
+    var card = document.createElement('div');
+    card.className = 'scenario-card';
+    card.setAttribute('data-scenario', idx);
+
+    var preview = t(sc.previewKey);
+    if (sc.previewData) {
+      Object.keys(sc.previewData).forEach(function(k) {
+        preview = preview.replace('{' + k + '}', sc.previewData[k]);
+      });
+    }
+    var desc = t(sc.descKey);
+    if (sc.previewData) {
+      Object.keys(sc.previewData).forEach(function(k) {
+        desc = desc.replace('{' + k + '}', sc.previewData[k]);
+      });
+    }
+
+    card.textContent = '';
+    var iconDiv = document.createElement('div');
+    iconDiv.className = 'scenario-icon';
+    iconDiv.textContent = sc.icon;
+    card.appendChild(iconDiv);
+
+    var textDiv = document.createElement('div');
+    textDiv.className = 'scenario-text';
+
+    var h4 = document.createElement('h4');
+    h4.textContent = t(sc.titleKey);
+    textDiv.appendChild(h4);
+
+    var p = document.createElement('p');
+    p.textContent = desc;
+    textDiv.appendChild(p);
+
+    var preview_div = document.createElement('div');
+    preview_div.className = 'scenario-preview';
+    preview_div.textContent = preview;
+    textDiv.appendChild(preview_div);
+
+    card.appendChild(textDiv);
+
+    card.onclick = function() {
+      sc.apply.call(sc);
+      panel.classList.remove('visible');
+      // Re-run results with adjusted answers
+      renderResults();
+    };
+    container.appendChild(card);
+  });
+
+  panel.classList.add('visible');
+}
+
+function toggleShowMore() {
+  showingMoreResults = !showingMoreResults;
+  var grid = document.getElementById('resultsGrid');
+  var cards = grid.querySelectorAll('.result-card');
+  if (showingMoreResults) {
+    cards.forEach(function(c) { c.style.display = 'block'; });
+    document.getElementById('showMoreBtn').textContent = t('show_less');
+  } else {
+    var count = 0;
+    cards.forEach(function(c, idx) {
+      c.style.display = idx < 3 ? 'block' : 'none';
+    });
+    document.getElementById('showMoreBtn').textContent = t('show_more');
+  }
+}
+
+function showResults() {
+  document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('results').classList.add('active');
+  document.querySelectorAll('.step-dot').forEach(function(d) { d.className = 'step-dot done'; });
+  renderResults();
+}
+
+function renderResults() {
+  // Normalize all places data once at the start
+  placesData.forEach(function(p) { normalizePlace(p); });
+
+  var budget = answers.mode === 'rent' ? '€' + answers.rentBudget.toLocaleString('en') + '/mo' : '€' + answers.buyBudget.toLocaleString('en');
+  var summaryHTML = '<span class="summary-item"><strong>' + t('sum_mode') + ':</strong> ' + t('mode_labels')[answers.mode] + '</span>' +
+    '<span class="summary-item"><strong>' + t('sum_budget') + ':</strong> ' + budget + '</span>' +
+    '<span class="summary-item"><strong>' + t('sum_household') + ':</strong> ' + t('household_labels')[answers.household] + '</span>';
+
+  if (answers.household === 'family' && answers.schoolPref) {
+    summaryHTML += '<span class="summary-item"><strong>' + t('sum_school') + ':</strong> ' + t('school_labels')[answers.schoolPref] + '</span>';
+  }
+  if (answers.mobility) {
+    summaryHTML += '<span class="summary-item"><strong>' + t('sum_mobility') + ':</strong> ' + t('mobility_labels')[answers.mobility] + '</span>';
+  }
+  summaryHTML += '<span class="summary-item"><strong>' + t('sum_work') + ':</strong> ' + t('work_labels')[answers.work] + '</span>' +
+    '<span class="summary-item"><strong>' + t('sum_climate') + ':</strong> ' + t('climate_labels')[answers.climate] + '</span>';
+
+  document.getElementById('summaryBar').innerHTML = summaryHTML;
+
+  var scored = placesData.map(function(p) { var copy = {}; for (var k in p) copy[k] = p[k]; copy.score = scorePlace(p); return copy; });
+  scored.sort(function(a, b) { return b.score - a.score; });
+
+  // ===== HARD BUDGET FILTER: max 25% above stated budget =====
+  var budgetCeiling = answers.mode === 'rent' ? answers.rentBudget * 1.25 : answers.buyBudget * 1.25;
+  var affordable = scored.filter(function(p) {
+    if (answers.mode === 'rent') {
+      var avgRent = (p.rentT2[0] + p.rentT2[1]) / 2;
+      return avgRent <= budgetCeiling;
+    } else {
+      return (p.buyM2 * 80) <= budgetCeiling;
+    }
+  });
+
+  var mismatchPanel = document.getElementById('mismatchPanel');
+
+  // If nothing is affordable, show mismatch panel and empty results
+  if (affordable.length === 0) {
+    var forcedScenarios = checkMismatch(scored);
+    if (forcedScenarios) {
+      renderMismatch(forcedScenarios);
+    }
+    document.getElementById('resultsCount').textContent = t('no_affordable');
+    document.getElementById('resultsGrid').innerHTML =
+      '<div style="text-align:center;color:var(--muted);padding:2rem;background:white;border-radius:12px;border:1px solid var(--border);">' +
+      '<p style="font-size:1.1rem;margin-bottom:0.5rem;">😕</p><p>' + t('no_affordable_msg') + '</p></div>';
+    document.getElementById('showMoreBtn').style.display = 'none';
+    window.scrollTo(0, 0);
+    return;
+  }
+
+  // Check for mismatch on affordable places
+  var mismatchScenarios = checkMismatch(affordable);
+  if (mismatchScenarios) {
+    renderMismatch(mismatchScenarios);
+  } else {
+    mismatchPanel.classList.remove('visible');
+  }
+
+  var filtered = affordable.filter(function(p) { return p.score >= 40; });
+  if (filtered.length < 5) filtered = affordable.slice(0, Math.min(10, affordable.length));
+  if (filtered.length > 20) filtered = filtered.slice(0, 20);
+
+  document.getElementById('resultsCount').textContent = filtered.length + ' ' + t('found');
+
+  var grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  filtered.forEach(function(p, idx) {
+    var matchClass = p.score >= 75 ? 'match-high' : p.score >= 55 ? 'match-med' : 'match-low';
+    var matchLabel = p.score >= 75 ? t('matchHigh') : p.score >= 55 ? t('matchMed') : t('matchLow');
+    var avgRent = Math.round((p.rentT2[0] + p.rentT2[1]) / 2);
+    var withinBudget = answers.mode === 'rent' ? avgRent <= answers.rentBudget : (p.buyM2 * 80) <= answers.buyBudget;
+
+    var card = document.createElement('div');
+    card.className = 'result-card';
+    card.style.display = idx < 3 || showingMoreResults ? 'block' : 'none';
+
+    var proximityHTML = '<div class="proximity-info">';
+    var pubHosp = findClosest(p, hospitalsPublic, 1);
+    if (pubHosp.length > 0) {
+      proximityHTML += '<div class="proximity-item"><div class="prox-icon">🏥</div><div><div class="prox-name">' + pubHosp[0].name + '</div><div class="prox-dist">' + Math.round(pubHosp[0].dist) + 'km (' + drivingTime(pubHosp[0].dist) + ' ' + t('prox_minutes') + ')</div></div></div>';
+    }
+    var privHosp = findClosest(p, hospitalsPrivate, 1);
+    if (privHosp.length > 0) {
+      proximityHTML += '<div class="proximity-item"><div class="prox-icon">⚕️</div><div><div class="prox-name">' + privHosp[0].name + '</div><div class="prox-dist">' + Math.round(privHosp[0].dist) + 'km (' + drivingTime(privHosp[0].dist) + ' ' + t('prox_minutes') + ')</div></div></div>';
+    }
+    if (answers.household === 'family') {
+      var school = findClosest(p, schools, 1);
+      if (school.length > 0) {
+        proximityHTML += '<div class="proximity-item"><div class="prox-icon">🎓</div><div><div class="prox-name">' + school[0].name + '</div><div class="prox-dist">' + Math.round(school[0].dist) + 'km (' + drivingTime(school[0].dist) + ' ' + t('prox_minutes') + ')</div><div class="prox-detail">' + school[0].facility.curriculum + ' • ' + school[0].facility.fees + '</div></div></div>';
+      }
+    }
+    proximityHTML += '</div>';
+
+    card.textContent = '';
+    var badge = document.createElement('div');
+    badge.className = 'match-badge ' + matchClass;
+    badge.textContent = matchLabel + ' ' + p.score + '%';
+    card.appendChild(badge);
+
+    var h3 = document.createElement('h3');
+    h3.textContent = p.name;
+    card.appendChild(h3);
+
+    var region_div = document.createElement('div');
+    region_div.className = 'region';
+    region_div.textContent = p.region + ' — ' + p.district;
+    card.appendChild(region_div);
+
+    var stats_div = document.createElement('div');
+    stats_div.className = 'stats';
+    if (answers.mode === 'buy') {
+      var stat1 = document.createElement('div');
+      stat1.className = 'stat';
+      stat1.innerHTML = '<div class="stat-label">' + t('lbl_buy') + '</div><div class="stat-value">' + p.buyM2.toLocaleString('en') + '€/m²</div>';
+      stats_div.appendChild(stat1);
+      var stat2 = document.createElement('div');
+      stat2.className = 'stat';
+      stat2.innerHTML = '<div class="stat-label">' + t('lbl_buy_est') + '</div><div class="stat-value" style="color:' + (withinBudget ? '#1B7A3D' : '#B91C1C') + '">€' + (p.buyM2 * 80).toLocaleString('en') + '</div>';
+      stats_div.appendChild(stat2);
+    } else {
+      var stat3 = document.createElement('div');
+      stat3.className = 'stat';
+      stat3.innerHTML = '<div class="stat-label">' + t('lbl_rent') + '</div><div class="stat-value" style="color:' + (withinBudget ? '#1B7A3D' : '#B91C1C') + '">' + p.rentT2[0].toLocaleString('en') + '–' + p.rentT2[1].toLocaleString('en') + '€/mo</div>';
+      stats_div.appendChild(stat3);
+      var stat4 = document.createElement('div');
+      stat4.className = 'stat';
+      stat4.innerHTML = '<div class="stat-label">' + t('lbl_rent_m2') + '</div><div class="stat-value">' + p.rentM2 + '€/m²</div>';
+      stats_div.appendChild(stat4);
+    }
+    card.appendChild(stats_div);
+
+    var tags_div = document.createElement('div');
+    tags_div.className = 'tags';
+    p.pros.forEach(function(x) {
+      var tag = document.createElement('span');
+      tag.className = 'tag tag-pro';
+      tag.textContent = '✓ ' + x;
+      tags_div.appendChild(tag);
+    });
+    p.cons.forEach(function(x) {
+      var tag = document.createElement('span');
+      tag.className = 'tag tag-con';
+      tag.textContent = '✗ ' + x;
+      tags_div.appendChild(tag);
+    });
+    card.appendChild(tags_div);
+
+    var notes = document.createElement('div');
+    notes.className = 'notes';
+    notes.textContent = p.notes;
+    card.appendChild(notes);
+
+    var proximity_container = document.createElement('div');
+    proximity_container.className = 'proximity-info';
+    var pubHosp = findClosest(p, hospitalsPublic, 1);
+    if (pubHosp.length > 0) {
+      var prox_item_pub = document.createElement('div');
+      prox_item_pub.className = 'proximity-item';
+      prox_item_pub.innerHTML = '<div class="prox-icon">🏥</div><div><div class="prox-name">' + pubHosp[0].name + '</div><div class="prox-dist">' + Math.round(pubHosp[0].dist) + 'km (' + drivingTime(pubHosp[0].dist) + ' ' + t('prox_minutes') + ')</div></div>';
+      proximity_container.appendChild(prox_item_pub);
+    }
+    var privHosp = findClosest(p, hospitalsPrivate, 1);
+    if (privHosp.length > 0) {
+      var prox_item_priv = document.createElement('div');
+      prox_item_priv.className = 'proximity-item';
+      prox_item_priv.innerHTML = '<div class="prox-icon">⚕️</div><div><div class="prox-name">' + privHosp[0].name + '</div><div class="prox-dist">' + Math.round(privHosp[0].dist) + 'km (' + drivingTime(privHosp[0].dist) + ' ' + t('prox_minutes') + ')</div></div>';
+      proximity_container.appendChild(prox_item_priv);
+    }
+    if (answers.household === 'family') {
+      var school = findClosest(p, schools, 1);
+      if (school.length > 0) {
+        var prox_item_school = document.createElement('div');
+        prox_item_school.className = 'proximity-item';
+        prox_item_school.innerHTML = '<div class="prox-icon">🎓</div><div><div class="prox-name">' + school[0].name + '</div><div class="prox-dist">' + Math.round(school[0].dist) + 'km (' + drivingTime(school[0].dist) + ' ' + t('prox_minutes') + ')</div><div class="prox-detail">' + school[0].facility.curriculum + ' • ' + school[0].facility.fees + '</div></div>';
+        proximity_container.appendChild(prox_item_school);
+      }
+    }
+    card.appendChild(proximity_container);
+
+    grid.appendChild(card);
+  });
+
+  if (filtered.length > 3) {
+    document.getElementById('showMoreBtn').style.display = 'block';
+    document.getElementById('showMoreBtn').textContent = t('show_more');
+    showingMoreResults = false;
+  } else {
+    document.getElementById('showMoreBtn').style.display = 'none';
+  }
+
+  window.scrollTo(0, 0);
+}
+</script>
+
+<!-- Load CONCELHOS data from module -->
+<script type="module">
+  import { CONCELHOS } from './concelhos.js';
+  window.CONCELHOS = CONCELHOS;
+  // Update meta description to reflect 76 areas instead of 47
+  document.querySelector('meta[name="description"]').setAttribute('content',
+    'Answer 8 questions and get personalised recommendations for where to live in Portugal. Compare prices, lifestyle and amenities across 76 municipalities. Free tool for expats.');
+  document.querySelector('meta[property="og:description"]').setAttribute('content',
+    'Free matching tool: find the best area in Portugal for your budget, lifestyle and priorities. Search across 76 municipalities.');
+</script>
+
+</body>
+</html>

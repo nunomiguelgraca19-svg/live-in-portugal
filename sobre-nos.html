@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us &#8212; Portugal Expat Home</title>
+<meta name="description" content="We help expats find their home in Portugal. Learn about who we are and get in touch. No agency fees, transparent service.">
+<meta name="keywords" content="about Portugal Expat Home, expat consultant Portugal, relocation services">
+<meta property="og:title" content="About Us &#8212; Portugal Expat Home">
+<meta property="og:description" content="We help expats find their home in Portugal. Learn about who we are.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%231F4E79'>🏠</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #C8956C;
+  --dark: #1A1A2E;
+  --cream: #FAF7F2;
+  --text: #3D3D3D;
+  --muted: #8A8A8A;
+  --border: #E8E4DE;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+.nav {
+  position: sticky; top: 0; z-index: 100; padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(26,26,46,0.95); backdrop-filter: blur(10px);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: white; text-decoration: none; font-weight: 600; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; margin-left: 1.5rem; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: white; text-align: center; padding: 4rem 2rem 3rem;
+}
+.page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.75rem; }
+.page-header p { opacity: 0.8; font-size: 1.05rem; max-width: 550px; margin: 0 auto; line-height: 1.6; }
+
+/* ABOUT CONTENT */
+.about-content { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; }
+.about-content h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 1rem; margin-top: 2.5rem; }
+.about-content h2:first-child { margin-top: 0; }
+.about-content p { font-size: 0.95rem; color: var(--text); line-height: 1.8; margin-bottom: 1rem; }
+
+/* FOUNDER CARD */
+.founder-card {
+  background: white; border-radius: 12px; padding: 2.5rem; margin: 2rem 0;
+  border: 1px solid var(--border); display: flex; gap: 2rem; align-items: center;
+}
+.founder-photo {
+  width: 120px; height: 120px; border-radius: 50%; background: var(--border);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; color: var(--muted);
+}
+.founder-info h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 0.3rem; }
+.founder-info .role { font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 0.75rem; }
+.founder-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+/* CONTACT FORM */
+.contact-section { max-width: 700px; margin: 0 auto; padding: 0 2rem 4rem; }
+.contact-section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 1.5rem; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+.contact-form {
+  background: white; border-radius: 12px; padding: 2rem; border: 1px solid var(--border);
+}
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--dark); margin-bottom: 0.4rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+  font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text);
+  background: var(--cream); transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--gold);
+}
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-submit {
+  background: var(--gold); color: white; border: none; padding: 0.8rem 2rem;
+  border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; width: 100%;
+}
+.form-submit:hover { background: #B8854F; }
+.form-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-card {
+  background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);
+}
+.contact-card .cc-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.contact-card h4 { font-size: 0.9rem; color: var(--dark); margin-bottom: 0.3rem; }
+.contact-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+.contact-card a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.contact-card a:hover { text-decoration: underline; }
+
+footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); background: white; border-top: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .page-header h1 { font-size: 1.8rem; }
+  .founder-card { flex-direction: column; text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Portugal Expat Home</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="Assistente-Onde-Morar-Portugal.html">Find your place</a>
+    <a href="sobre-nos.html" style="color:white">About us</a>
+    <a href="servicos.html">Services</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>About Us</h1>
+  <p>We&#8217;ve been through the process ourselves. That&#8217;s why we built this.</p>
+</div>
+
+<div class="about-content">
+
+  <h2>Why this exists</h2>
+  <p>Moving to a new country is exciting. But the practical side &#8212; finding the right neighbourhood, understanding local prices, navigating Portuguese bureaucracy &#8212; can be overwhelming, especially when you don&#8217;t know anyone on the ground.</p>
+  <p>We built Portugal Expat Home because we went through this ourselves. We know what it&#8217;s like to look at a map of a country you&#8217;ve never lived in and try to figure out where you&#8217;d be happy. We know what it&#8217;s like to deal with Finan&#231;as, AIMA, and landlords who don&#8217;t speak English.</p>
+  <p>Our goal is simple: give you the information you need to make a good decision, and be there to help if you want someone handling the details.</p>
+
+  <div class="founder-card">
+    <div class="founder-photo">&#128100;</div>
+    <div class="founder-info">
+      <h3>Live in Portugal</h3>
+      <div class="role">Founder</div>
+      <p>Find your place in Portugal. Live in Portugal helps expats find the right place to live in Portugal. From cost of living to lifestyle, we simplify your decision.</p>
+    </div>
+  </div>
+
+  <h2>How we work</h2>
+  <p>We&#8217;re not a real estate agency. We don&#8217;t sell properties and we don&#8217;t take commissions from landlords or developers. That means our recommendations are always in your interest, not someone else&#8217;s.</p>
+  <p>Our free matching tool uses real market data to suggest the best areas for your profile. If you then want hands-on help &#8212; property visits, NIF registration, contract signing &#8212; we offer those as transparent, fixed-price services.</p>
+
+</div>
+
+<div class="contact-section" id="contacto">
+  <h2>Get in touch</h2>
+  <div class="contact-grid">
+
+    <div class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/mqewpgry" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name">Your name <span style="color:red;">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" minlength="2" maxlength="100" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span style="color:red;">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com" maxlength="120" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm interested in <span style="color:red;">*</span></label>
+          <select id="interest" name="interest" required aria-required="true">
+            <option value="">— Select an option —</option>
+            <option value="general">General information</option>
+            <option value="visits">Property visits</option>
+            <option value="nif">NIF registration</option>
+            <option value="bank">Bank account</option>
+            <option value="contract">Contract review</option>
+            <option value="signing">Signing with power of attorney</option>
+            <option value="package">Full relocation package</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="area">Area of interest (if any)</label>
+          <input type="text" id="area" name="area" placeholder="e.g. Lisbon, Cascais, Algarve..." maxlength="100">
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span style="color:red;">*</span></label>
+          <textarea id="message" name="message" required placeholder="Tell us a bit about your situation..." minlength="10" maxlength="2000" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send message</button>
+        <div class="form-note">We usually reply within 24 hours.</div>
+        <div id="formError" style="display:none;color:#B91C1C;padding:1rem;background:#FEE2E2;border-radius:6px;margin-top:1rem;font-size:0.9rem;"></div>
+      </form>
+      <div id="formSuccess" style="display:none;text-align:center;padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">&#9989;</div>
+        <p style="font-size:1rem;color:var(--dark);font-weight:500;">Message sent!</p>
+        <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">We&#8217;ll get back to you within 24 hours.</p>
+      </div>
+    </div>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        var errorDiv = document.getElementById('formError');
+        errorDiv.style.display = 'none';
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var interest = document.getElementById('interest').value;
+        var message = document.getElementById('message').value.trim();
+
+        if (!name || name.length < 2) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please enter a valid name (at least 2 characters).';
+          errorDiv.style.display = 'block';
+          return;
+        }
+        if (!email || email.indexOf('@') === -1) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please enter a valid email address.';
+          errorDiv.style.display = 'block';
+          return;
+        }
+        if (!interest) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please select what you are interested in.';
+          errorDiv.style.display = 'block';
+          return;
+        }
+        if (!message || message.length < 10) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please enter a message (at least 10 characters).';
+          errorDiv.style.display = 'block';
+          return;
+        }
+      });
+    </script>
+
+    <div class="contact-info">
+      <div class="contact-card">
+        <div class="cc-icon">&#9993;</div>
+        <h4>Email</h4>
+        <p><a href="mailto:info@portugalexpathome.com">info@portugalexpathome.com</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">&#128172;</div>
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/351936655954" target="_blank">+351 936 655 954</a></p>
+        <p style="margin-top:0.3rem;">Usually the fastest way to reach us.</p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">&#127757;</div>
+        <h4>Based in</h4>
+        <p>Portugal</p>
+        <p style="margin-top:0.3rem;">We work remotely with clients worldwide.</p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">&#128337;</div>
+        <h4>Response time</h4>
+        <p>Within 24 hours on weekdays.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Portugal Expat Home &#169; 2026</p>
+</footer>
+
+<script>
+// Formspree handles submission. Show success message on return.
+if (window.location.search.includes('submitted=true')) {
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
