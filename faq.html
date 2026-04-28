@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ &#8212; Portugal Expat Home</title>
+<meta name="description" content="Frequently asked questions about finding your home in Portugal. Learn about services, pricing, visas, and our data sources.">
+<meta name="keywords" content="FAQ, Portugal, expat, questions, answers, visa, housing">
+<meta property="og:title" content="FAQ &#8212; Portugal Expat Home">
+<meta property="og:description" content="Common questions about relocating to Portugal answered.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%231F4E79'>🏠</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #C8956C;
+  --dark: #1A1A2E;
+  --cream: #FAF7F2;
+  --text: #3D3D3D;
+  --muted: #8A8A8A;
+  --border: #E8E4DE;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 100; padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(26,26,46,0.95); backdrop-filter: blur(10px);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: white; text-decoration: none; font-weight: 600; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+/* Page header */
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: white; text-align: center; padding: 4rem 2rem 3rem;
+}
+.page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.75rem; }
+.page-header p { opacity: 0.8; font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+
+/* FAQ Content */
+.faq-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+
+.faq-section { margin-bottom: 3rem; }
+.faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dark); margin-bottom: 2rem; }
+
+.faq-item {
+  background: white; border: 1px solid var(--border); border-radius: 10px;
+  margin-bottom: 1rem; overflow: hidden; transition: all 0.3s;
+}
+.faq-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+.faq-q {
+  padding: 1.5rem; cursor: pointer; font-weight: 600; color: var(--dark);
+  display: flex; justify-content: space-between; align-items: center;
+  user-select: none;
+}
+.faq-q::after { content: '+'; font-size: 1.5rem; color: var(--gold); transition: transform 0.3s; }
+
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-item.open .faq-a { display: block; }
+
+.faq-a {
+  display: none; padding: 0 1.5rem 1.5rem; color: var(--text); line-height: 1.8;
+  border-top: 1px solid var(--border);
+}
+
+/* Footer */
+footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); background: white; border-top: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .faq-q { padding: 1rem; }
+  .faq-a { padding: 0 1rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Portugal Expat Home</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="sobre-nos.html">About us</a>
+    <a href="faq.html" style="color:white">FAQ</a>
+    <a href="Assistente-Onde-Morar-Portugal.html">Find my place</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Questions & Answers</h1>
+  <p>Everything you need to know about finding your home in Portugal</p>
+</div>
+
+<div class="faq-container">
+  <div class="faq-section">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Is this service really free?</div>
+      <div class="faq-a">Yes. The matching tool and all the information on this site are completely free. We only charge for optional hands-on services: organising property visits, handling paperwork (NIF, bank accounts, contracts), or signing on your behalf with power of attorney. You choose what you need.</div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">What can you help me with?</div>
+      <div class="faq-a">We can organise property visits (in person or virtual), help with legal documentation (NIF registration, opening a bank account, visa applications), review contracts, and even sign rental or purchase agreements on your behalf using a power of attorney. Each service is priced transparently.</div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">How accurate are the prices?</div>
+      <div class="faq-a">We use data from Idealista, INE (Portugal's statistics office), and other sources, updated monthly. Prices shown are median asking prices and may differ from final transaction values. We recommend always verifying with current listings.</div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Do I need a visa to live in Portugal?</div>
+      <div class="faq-a">If you're from outside the EU, yes. The most common options are the D7 visa (passive income/pension), the Digital Nomad visa (D8), or the CPLP visa for lusophone countries. We can guide you through the process or refer you to a specialist immigration lawyer.</div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Can I use this from outside Portugal?</div>
+      <div class="faq-a">Absolutely. The matching tool works from anywhere. If you want us to visit properties on your behalf, we can send video reports. Many of our clients start the process entirely online before flying in to sign.</div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">What areas of Portugal do you cover?</div>
+      <div class="faq-a">We have detailed data for 76 municipalities across Portugal, including Lisbon, Porto, Algarve, Silver Coast, Alentejo, Madeira and the Azores. We're expanding to neighbourhood-level detail every month.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Portugal Expat Home &#169; 2026 &#8212; Data updated April 2026</p>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', function() {
+  document.querySelector('.nav').style.background = window.scrollY > 50 ? 'rgba(26,26,46,0.95)' : 'rgba(26,26,46,0.95)';
+});
+</script>
+
+</body>
+</html>
