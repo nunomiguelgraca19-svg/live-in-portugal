@@ -6386,16 +6386,5 @@ function renderResults() {
 }
 </script>
 
-<!-- Load CONCELHOS data from module -->
-<script type="module">
-  import { CONCELHOS } from './concelhos.js';
-  window.CONCELHOS = CONCELHOS;
-  // Update meta description to reflect 76 areas instead of 47
-  document.querySelector('meta[name="description"]').setAttribute('content',
-    'Answer 8 questions and get personalised recommendations for where to live in Portugal. Compare prices, lifestyle and amenities across 76 municipalities. Free tool for expats.');
-  document.querySelector('meta[property="og:description"]').setAttribute('content',
-    'Free matching tool: find the best area in Portugal for your budget, lifestyle and priorities. Search across 76 municipalities.');
-</script>
-
 </body>
 </html>
