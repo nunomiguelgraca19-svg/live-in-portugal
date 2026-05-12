@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Browser(liveinportugal.eu)",
+      "Browser(live-in-portugal.vercel.app)"
+    ]
+  }
+}
