@@ -1,0 +1,622 @@
+const schools = [
+  {
+    "name": "Lycée Français Charles Lepierre",
+    "lat": 38.734,
+    "lon": -9.153,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "French",
+    "ages": "3-18",
+    "fees": "€5.452-7.536"
+  },
+  {
+    "name": "Deutsche Schule Lissabon (DSL)",
+    "lat": 38.769,
+    "lon": -9.167,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "German",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Astoria International School",
+    "lat": 38.738,
+    "lon": -9.168,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Multilingual",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "The Lisboan International School",
+    "lat": 38.73,
+    "lon": -9.14,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge/IB",
+    "ages": "3-18",
+    "fees": "€16.950"
+  },
+  {
+    "name": "United Lisbon International School (ULIS)",
+    "lat": 38.745,
+    "lon": -9.135,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "International/IB",
+    "ages": "3-18",
+    "fees": "€10.643-21.745"
+  },
+  {
+    "name": "Redbridge International School",
+    "lat": 38.75,
+    "lon": -9.185,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "€12.000"
+  },
+  {
+    "name": "Greene's College Oxford - Lisboa",
+    "lat": 38.73,
+    "lon": -9.16,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "IGCSE/A-Level",
+    "ages": "11-18",
+    "fees": "€8.900-23.900"
+  },
+  {
+    "name": "BGA Lisboa Campolide",
+    "lat": 38.74,
+    "lon": -9.155,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Lisboa CCB",
+    "lat": 38.72,
+    "lon": -9.17,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Lisboa Restelo",
+    "lat": 38.708,
+    "lon": -9.21,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Lisboa Lumiar",
+    "lat": 38.768,
+    "lon": -9.167,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Lisboa Expo",
+    "lat": 38.768,
+    "lon": -9.094,
+    "district": "Lisboa",
+    "concelho": "Lisboa",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "King's College School Cascais",
+    "lat": 38.701,
+    "lon": -9.415,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge/IB",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "St. Julian's School",
+    "lat": 38.685,
+    "lon": -9.331,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "British/IB",
+    "ages": "3-18",
+    "fees": "€8.000-18.000"
+  },
+  {
+    "name": "St. Dominic's International School",
+    "lat": 38.754,
+    "lon": -9.322,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "IB",
+    "ages": "3-18",
+    "fees": "€9.000-16.000"
+  },
+  {
+    "name": "PaRK International School Cascais",
+    "lat": 38.698,
+    "lon": -9.418,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "1-11",
+    "fees": "n/d"
+  },
+  {
+    "name": "International Christian School of Cascais (ICSC)",
+    "lat": 38.715,
+    "lon": -9.395,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "American",
+    "ages": "4-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Aprendizes International Active Learning",
+    "lat": 38.705,
+    "lon": -9.405,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "€10.600-16.800"
+  },
+  {
+    "name": "BGA Cascais Parede",
+    "lat": 38.702,
+    "lon": -9.368,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Cascais Centro",
+    "lat": 38.697,
+    "lon": -9.421,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Cascais Baía",
+    "lat": 38.705,
+    "lon": -9.415,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Cascais Quinta da Marinha",
+    "lat": 38.71,
+    "lon": -9.43,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Cascais Guincho",
+    "lat": 38.735,
+    "lon": -9.468,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "TASIS Portugal",
+    "lat": 38.787,
+    "lon": -9.391,
+    "district": "Lisboa",
+    "concelho": "Sintra",
+    "curriculum": "American/IB",
+    "ages": "3-18",
+    "fees": "€12.390-23.160"
+  },
+  {
+    "name": "Carlucci American International School (CAISL)",
+    "lat": 38.761,
+    "lon": -9.341,
+    "district": "Lisboa",
+    "concelho": "Sintra",
+    "curriculum": "American/IB",
+    "ages": "3-18",
+    "fees": "€9.692-20.532"
+  },
+  {
+    "name": "Hypha International School",
+    "lat": 38.78,
+    "lon": -9.36,
+    "district": "Lisboa",
+    "concelho": "Sintra",
+    "curriculum": "Cambridge",
+    "ages": "3-8",
+    "fees": "€10.495-12.000"
+  },
+  {
+    "name": "BGA Sintra",
+    "lat": 38.754,
+    "lon": -9.386,
+    "district": "Lisboa",
+    "concelho": "Sintra",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Oeiras International School (OIS)",
+    "lat": 38.692,
+    "lon": -9.31,
+    "district": "Lisboa",
+    "concelho": "Oeiras",
+    "curriculum": "British/IB",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "International Sharing School Taguspark",
+    "lat": 38.68,
+    "lon": -9.3,
+    "district": "Lisboa",
+    "concelho": "Oeiras",
+    "curriculum": "IB",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Greene's College Oxford - Estoril",
+    "lat": 38.67,
+    "lon": -9.406,
+    "district": "Lisboa",
+    "concelho": "Cascais",
+    "curriculum": "IGCSE/A-Level",
+    "ages": "11-18",
+    "fees": "€8.900-23.900"
+  },
+  {
+    "name": "St. Peter's International School",
+    "lat": 38.5589,
+    "lon": -8.9012,
+    "district": "Setúbal",
+    "concelho": "Palmela",
+    "curriculum": "Cambridge/IB",
+    "ages": "4-18",
+    "fees": "€7.500-37.620"
+  },
+  {
+    "name": "Colégio Atlântico",
+    "lat": 38.645,
+    "lon": -9.02,
+    "district": "Setúbal",
+    "concelho": "Seixal",
+    "curriculum": "Cambridge/IB",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Setúbal",
+    "lat": 38.524,
+    "lon": -8.894,
+    "district": "Setúbal",
+    "concelho": "Setúbal",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Comporta",
+    "lat": 38.38,
+    "lon": -8.785,
+    "district": "Setúbal",
+    "concelho": "Comporta",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Oporto British School (OBS)",
+    "lat": 41.158,
+    "lon": -8.629,
+    "district": "Porto",
+    "concelho": "Porto",
+    "curriculum": "British/IB",
+    "ages": "3-18",
+    "fees": "€7.528-11.071"
+  },
+  {
+    "name": "Colégio Luso-Internacional do Porto (CLIP)",
+    "lat": 41.168,
+    "lon": -8.645,
+    "district": "Porto",
+    "concelho": "Porto",
+    "curriculum": "British/IB",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "CJD International School",
+    "lat": 41.16,
+    "lon": -8.64,
+    "district": "Porto",
+    "concelho": "Porto",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "€7.000"
+  },
+  {
+    "name": "CLIB - Colégio Luso Internacional de Braga",
+    "lat": 41.553,
+    "lon": -8.418,
+    "district": "Braga",
+    "concelho": "Braga",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "€3.750-6.000"
+  },
+  {
+    "name": "Colégio João Paulo II",
+    "lat": 41.555,
+    "lon": -8.42,
+    "district": "Braga",
+    "concelho": "Braga",
+    "curriculum": "Bilingual/IB",
+    "ages": "3-18",
+    "fees": "€8.058-9.020"
+  },
+  {
+    "name": "BGA Porto",
+    "lat": 41.155,
+    "lon": -8.63,
+    "district": "Porto",
+    "concelho": "Porto",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Braga",
+    "lat": 41.553,
+    "lon": -8.42,
+    "district": "Braga",
+    "concelho": "Braga",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Esposende",
+    "lat": 41.53,
+    "lon": -8.78,
+    "district": "Braga",
+    "concelho": "Esposende",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Nobel Algarve British International School - Lagoa",
+    "lat": 37.086,
+    "lon": -8.248,
+    "district": "Faro",
+    "concelho": "Lagoa",
+    "curriculum": "British/IGCSE",
+    "ages": "3-18",
+    "fees": "€13.780-18.100"
+  },
+  {
+    "name": "Nobel Algarve - Almancil",
+    "lat": 37.095,
+    "lon": -8.19,
+    "district": "Faro",
+    "concelho": "Loulé",
+    "curriculum": "British",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Vale Verde International School",
+    "lat": 37.08,
+    "lon": -8.67,
+    "district": "Faro",
+    "concelho": "Lagos",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "€5.300-7.500"
+  },
+  {
+    "name": "Barlavento International Primary School",
+    "lat": 37.095,
+    "lon": -8.735,
+    "district": "Faro",
+    "concelho": "Lagos",
+    "curriculum": "British",
+    "ages": "3-11",
+    "fees": "€6.348-6.900"
+  },
+  {
+    "name": "Bright International School",
+    "lat": 37.095,
+    "lon": -8.19,
+    "district": "Faro",
+    "concelho": "Loulé",
+    "curriculum": "Cambridge",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "Aspire International School Algarve",
+    "lat": 37.095,
+    "lon": -8.19,
+    "district": "Faro",
+    "concelho": "Loulé",
+    "curriculum": "Pearson Edexcel",
+    "ages": "3-18",
+    "fees": "€6.595-13.995"
+  },
+  {
+    "name": "Colégio Santiago Internacional",
+    "lat": 37.127,
+    "lon": -7.649,
+    "district": "Faro",
+    "concelho": "Tavira",
+    "curriculum": "Bilingual",
+    "ages": "3-18",
+    "fees": "€5.235-7.998"
+  },
+  {
+    "name": "Eden Montessori International School",
+    "lat": 37.088,
+    "lon": -8.25,
+    "district": "Faro",
+    "concelho": "Albufeira",
+    "curriculum": "Montessori",
+    "ages": "3-12",
+    "fees": "€6.340-9.090"
+  },
+  {
+    "name": "BGA Algarve (Lagos)",
+    "lat": 37.102,
+    "lon": -8.673,
+    "district": "Faro",
+    "concelho": "Lagos",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "International School of Madeira (ISM)",
+    "lat": 32.655,
+    "lon": -16.91,
+    "district": "Madeira",
+    "concelho": "Funchal",
+    "curriculum": "British/Cambridge",
+    "ages": "3-10",
+    "fees": "€5.300-5.900"
+  },
+  {
+    "name": "International Sharing School Madeira",
+    "lat": 32.66,
+    "lon": -16.92,
+    "district": "Madeira",
+    "concelho": "Funchal",
+    "curriculum": "IB",
+    "ages": "3-18",
+    "fees": "€5.880-13.140"
+  },
+  {
+    "name": "St. Paul's School Coimbra",
+    "lat": 40.2033,
+    "lon": -8.4103,
+    "district": "Coimbra",
+    "concelho": "Coimbra",
+    "curriculum": "British/Bilingual",
+    "ages": "3-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Coimbra",
+    "lat": 40.2033,
+    "lon": -8.4103,
+    "district": "Coimbra",
+    "concelho": "Coimbra",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Ericeira",
+    "lat": 38.963,
+    "lon": -9.415,
+    "district": "Lisboa",
+    "concelho": "Mafra",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Óbidos",
+    "lat": 39.356,
+    "lon": -9.36,
+    "district": "Leiria",
+    "concelho": "Óbidos",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Caldas da Rainha",
+    "lat": 39.403,
+    "lon": -9.134,
+    "district": "Leiria",
+    "concelho": "Caldas da Rainha",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Leiria",
+    "lat": 39.738,
+    "lon": -8.807,
+    "district": "Leiria",
+    "concelho": "Leiria",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Aveiro",
+    "lat": 40.6405,
+    "lon": -8.6538,
+    "district": "Aveiro",
+    "concelho": "Aveiro",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Santarém",
+    "lat": 39.236,
+    "lon": -8.685,
+    "district": "Santarém",
+    "concelho": "Santarém",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  },
+  {
+    "name": "BGA Fundão",
+    "lat": 40.322,
+    "lon": -7.498,
+    "district": "Guarda",
+    "concelho": "Fundão",
+    "curriculum": "Cambridge",
+    "ages": "12-18",
+    "fees": "n/d"
+  }
+];
