@@ -1,0 +1,10 @@
+# Vercel redirects for URL changes - preserve SEO with 301 permanent redirects
+
+# Portuguese filenames to English
+/Assistente-Onde-Morar-Portugal.html /quiz.html 301
+/sobre-nos.html /about-us.html 301
+/servicos.html /services.html 301
+/blog-nif-portugal.html /blog/nif-in-portugal.html 301
+
+# Alternative variations that might appear in the wild
+/blog/nif-portugal.html /blog/nif-in-portugal.html 301
