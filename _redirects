@@ -1,4 +1,5 @@
 # Vercel redirects for URL changes - preserve SEO with 301 permanent redirects
+# This file is at the root of the repository for Vercel to process correctly
 
 # Portuguese filenames to English
 /Assistente-Onde-Morar-Portugal.html /quiz.html 301
