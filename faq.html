@@ -88,9 +88,9 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
   <a href="index.html" class="nav-logo">Portugal Expat Home</a>
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="quiz.html">Find my place</a>
     <a href="about-us.html">About us</a>
     <a href="faq.html" style="color:white">FAQ</a>
-    <a href="quiz.html">Find my place</a>
   </div>
 </nav>
 
@@ -101,40 +101,60 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
 
 <div class="faq-container">
   <div class="faq-section">
+    <!-- Q1: How matching works -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">Is this service really free?</div>
-      <div class="faq-a">Yes. The matching tool and all the information on this site are completely free. We only charge for optional hands-on services: organising property visits, handling paperwork (NIF, bank accounts, contracts), or signing on your behalf with power of attorney. You choose what you need.</div>
+      <div class="faq-q">How does the matching process work?</div>
+      <div class="faq-a">
+        <p><strong>English:</strong> You answer six quick questions about your budget, lifestyle, and priorities. Our algorithm compares your profile against 94 areas across Portugal and ranks the best matches based on cost of living, lifestyle, climate, and infrastructure. Results include detailed information on each area to help you decide.</p>
+        <p style="margin-top:1rem;"><strong>Français:</strong> Répondez à six questions rapides sur votre budget, votre style de vie et vos priorités. Notre algorithme compare votre profil à 94 régions du Portugal et classe les meilleures correspondances en fonction du coût de la vie, du style de vie, du climat et des infrastructures. Les résultats incluent des informations détaillées sur chaque région pour vous aider à décider.</p>
+        <p style="margin-top:1rem;"><strong>Português:</strong> Responda a seis perguntas rápidas sobre seu orçamento, estilo de vida e prioridades. Nosso algoritmo compara seu perfil com 94 áreas em Portugal e classifica as melhores correspondências com base no custo de vida, estilo de vida, clima e infraestrutura. Os resultados incluem informações detalhadas sobre cada área para ajudá-lo a decidir.</p>
+      </div>
     </div>
 
+    <!-- Q2: Price accuracy -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">What can you help me with?</div>
-      <div class="faq-a">We can organise property visits (in person or virtual), help with legal documentation (NIF registration, opening a bank account, visa applications), review contracts, and even sign rental or purchase agreements on your behalf using a power of attorney. Each service is priced transparently.</div>
+      <div class="faq-q">How accurate are the prices provided?</div>
+      <div class="faq-a">
+        <p><strong>English:</strong> We use data from Idealista, INE (Portugal's official statistics office), and other verified sources, updated monthly. The prices shown are median asking prices for rentals and purchases. Keep in mind that actual prices may vary based on location within an area, property condition, and market timing. We recommend always verifying current listings on local property platforms.</p>
+        <p style="margin-top:1rem;"><strong>Français:</strong> Nous utilisons des données d'Idealista, de l'INE (bureau officiel des statistiques du Portugal) et d'autres sources vérifiées, mises à jour mensuellement. Les prix affichés sont les prix médians demandés pour les locations et les achats. Notez que les prix réels peuvent varier en fonction de l'emplacement dans une région, de l'état de la propriété et de la conjoncture du marché. Nous vous recommandons de toujours vérifier les annonces actuelles sur les plateformes immobilières locales.</p>
+        <p style="margin-top:1rem;"><strong>Português:</strong> Usamos dados do Idealista, do INE (instituto oficial de estatísticas de Portugal) e de outras fontes verificadas, atualizados mensalmente. Os preços mostrados são os preços médios solicitados para aluguéis e compras. Tenha em mente que os preços reais podem variar dependendo da localização dentro de uma área, condição do imóvel e conjuntura do mercado. Recomendamos sempre verificar listagens atuais em plataformas imobiliárias locais.</p>
+      </div>
     </div>
 
+    <!-- Q3: Visa requirements -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">How accurate are the prices?</div>
-      <div class="faq-a">We use data from Idealista, INE (Portugal's statistics office), and other sources, updated monthly. Prices shown are median asking prices and may differ from final transaction values. We recommend always verifying with current listings.</div>
+      <div class="faq-q">Do I need a visa to move to Portugal?</div>
+      <div class="faq-a">
+        <p><strong>English:</strong> It depends on your nationality. EU and EEA citizens have freedom of movement and don't need a visa. Non-EU citizens typically need a visa. The most common options are the D7 visa (for retirement or passive income), the Digital Nomad visa (for remote workers), or the CPLP visa (for citizens of lusophone countries). We recommend consulting an immigration lawyer for your specific situation.</p>
+        <p style="margin-top:1rem;"><strong>Français:</strong> Cela dépend de votre nationalité. Les citoyens de l'UE et de l'EEE ont la liberté de circulation et n'ont pas besoin de visa. Les citoyens non-UE ont généralement besoin d'un visa. Les options les plus courantes sont le visa D7 (pour la retraite ou le revenu passif), le visa Digital Nomad (pour les travailleurs à distance) ou le visa CPLP (pour les citoyens de pays lusophones). Nous vous recommandons de consulter un avocat en immigration pour votre situation spécifique.</p>
+        <p style="margin-top:1rem;"><strong>Português:</strong> Depende da sua nacionalidade. Os cidadãos da UE e do EEE têm liberdade de circulação e não precisam de visto. Cidadãos não-UE normalmente precisam de visto. As opções mais comuns são o visto D7 (para aposentadoria ou renda passiva), o visto de Nômade Digital (para trabalhadores remotos) ou o visto CPLP (para cidadãos de países lusofonos). Recomendamos consultar um advogado de imigração para sua situação específica.</p>
+      </div>
     </div>
 
+    <!-- Q4: Required documents -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">Do I need a visa to live in Portugal?</div>
-      <div class="faq-a">If you're from outside the EU, yes. The most common options are the D7 visa (passive income/pension), the Digital Nomad visa (D8), or the CPLP visa for lusophone countries. We can guide you through the process or refer you to a specialist immigration lawyer.</div>
+      <div class="faq-q">What documents do I need to move to Portugal?</div>
+      <div class="faq-a">
+        <p><strong>English:</strong> Required documents vary depending on your nationality and visa type, but typically include a valid passport, proof of income or bank statements, proof of accommodation, and health insurance. For specific visa applications, you'll need additional documents such as a birth certificate, police clearance, and criminal record check. We can help you prepare these documents or refer you to a specialist.</p>
+        <p style="margin-top:1rem;"><strong>Français:</strong> Les documents requis varient selon votre nationalité et le type de visa, mais incluent généralement un passeport valide, une preuve de revenu ou des relevés bancaires, une preuve de logement et une assurance maladie. Pour les demandes de visa spécifiques, vous aurez besoin de documents supplémentaires tels qu'un certificat de naissance, un certificat de police et un extrait de casier judiciaire. Nous pouvons vous aider à préparer ces documents ou vous référer à un spécialiste.</p>
+        <p style="margin-top:1rem;"><strong>Português:</strong> Os documentos necessários variam dependendo da sua nacionalidade e tipo de visto, mas normalmente incluem um passaporte válido, comprovante de renda ou extratos bancários, comprovante de alojamento e seguro de saúde. Para candidaturas a visto específicas, você precisará de documentos adicionais, como certidão de nascimento, atestado de polícia e antecedentes criminais. Podemos ajudá-lo a preparar esses documentos ou referi-lo a um especialista.</p>
+      </div>
     </div>
 
+    <!-- Q5: Coverage areas -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">Can I use this from outside Portugal?</div>
-      <div class="faq-a">Absolutely. The matching tool works from anywhere. If you want us to visit properties on your behalf, we can send video reports. Many of our clients start the process entirely online before flying in to sign.</div>
-    </div>
-
-    <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">What areas of Portugal do you cover?</div>
-      <div class="faq-a">We have detailed data for 76 municipalities across Portugal, including Lisbon, Porto, Algarve, Silver Coast, Alentejo, Madeira and the Azores. We're expanding to neighbourhood-level detail every month.</div>
+      <div class="faq-q">What areas does the service cover?</div>
+      <div class="faq-a">
+        <p><strong>English:</strong> We have detailed data and recommendations for 94 areas across Portugal, including major cities like Lisbon and Porto, coastal regions like the Algarve and Silver Coast, and inland areas like Alentejo. We also have data for the autonomous regions of Madeira and the Azores. We're continuously expanding our coverage to include neighbourhood-level detail in popular cities.</p>
+        <p style="margin-top:1rem;"><strong>Français:</strong> Nous avons des données détaillées et des recommandations pour 94 régions au Portugal, y compris les grandes villes comme Lisbonne et Porto, les régions côtières comme l'Algarve et la Côte d'Argent, et les zones intérieures comme l'Alentejo. Nous avons également des données pour les régions autonomes de Madère et des Açores. Nous élargissons continuellement notre couverture pour inclure des détails au niveau du quartier dans les villes populaires.</p>
+        <p style="margin-top:1rem;"><strong>Português:</strong> Temos dados detalhados e recomendações para 94 áreas em Portugal, incluindo grandes cidades como Lisboa e Porto, regiões costeiras como o Algarve e Costa de Prata, e áreas interiores como Alentejo. Também temos dados para as regiões autônomas da Madeira e Açores. Estamos continuamente expandindo nossa cobertura para incluir detalhes ao nível do bairro em cidades populares.</p>
+      </div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>Portugal Expat Home &#169; 2026 &#8212; Data updated April 2026</p>
+  <p>Portugal Expat Home &#169; 2026 &#8212; Data updated May 2026</p>
 </footer>
 
 <script>
