@@ -137,6 +137,13 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
 
 <div class="about-content">
 
+  <!-- Language Selector -->
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <button class="lang-btn active" onclick="setLanguage('en')" data-lang="en" style="background: var(--mid-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin: 0 0.5rem; cursor: pointer; font-weight: 500; font-size: 0.9rem; transition: all 0.2s;">EN</button>
+    <button class="lang-btn" onclick="setLanguage('fr')" data-lang="fr" style="background: #E2E8F0; color: var(--text); border: none; padding: 0.5rem 1rem; border-radius: 4px; margin: 0 0.5rem; cursor: pointer; font-weight: 500; font-size: 0.9rem; transition: all 0.2s;">FR</button>
+    <button class="lang-btn" onclick="setLanguage('pt')" data-lang="pt" style="background: #E2E8F0; color: var(--text); border: none; padding: 0.5rem 1rem; border-radius: 4px; margin: 0 0.5rem; cursor: pointer; font-weight: 500; font-size: 0.9rem; transition: all 0.2s;">PT</button>
+  </div>
+
   <h2 class="tagline" style="font-size: 1.3rem; font-weight: 400; margin-bottom: 2rem;">
     <span lang="en">There&#8217;s more to Portugal than Lisbon and Porto.</span>
     <span lang="fr" style="display:none;">Le Portugal ne se résume pas à Lisbonne et Porto.</span>
@@ -244,6 +251,40 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
 </footer>
 
 <script>
+// Language Selector
+function setLanguage(lang) {
+  // Update button styles
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.dataset.lang === lang) {
+      btn.style.background = 'var(--mid-blue)';
+      btn.style.color = 'white';
+      btn.classList.add('active');
+    } else {
+      btn.style.background = '#E2E8F0';
+      btn.style.color = 'var(--text)';
+      btn.classList.remove('active');
+    }
+  });
+
+  // Show/hide content based on language
+  document.querySelectorAll('[lang]').forEach(el => {
+    if (el.getAttribute('lang') === lang) {
+      el.style.display = 'inline';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+
+  // Save preference to localStorage
+  localStorage.setItem('preferredLanguage', lang);
+}
+
+// Initialize language on page load
+window.addEventListener('DOMContentLoaded', function() {
+  const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+  setLanguage(savedLang);
+});
+
 // Formspree handles submission. Show success message on return.
 if (window.location.search.includes('submitted=true')) {
   document.getElementById('contactForm').style.display = 'none';
