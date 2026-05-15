@@ -124,9 +124,9 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
   <a href="index.html" class="nav-logo">Portugal Expat Home</a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="quiz.html">Find my place</a>
+    <a href="quiz.html">Find your place</a>
     <a href="about-us.html" style="color:white">About us</a>
-    <a href="faq.html">FAQ</a>
+    <a href="services.html">Services</a>
   </div>
 </nav>
 
@@ -137,74 +137,102 @@ footer { padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--mute
 
 <div class="about-content">
 
-  <h2 class="tagline" style="font-size: 1.3rem; font-weight: 400; margin-bottom: 2rem;">
-    <span lang="en">There&#8217;s more to Portugal than Lisbon and Porto.</span>
-    <span lang="fr" style="display:none;">Le Portugal ne se résume pas à Lisbonne et Porto.</span>
-    <span lang="pt" style="display:none;">Portugal é muito mais do que Lisboa e Porto.</span>
-  </h2>
+  <h2>Why this exists</h2>
+  <p>Moving to a new country is exciting. But the practical side &#8212; finding the right neighbourhood, understanding local prices, navigating Portuguese bureaucracy &#8212; can be overwhelming, especially when you don&#8217;t know anyone on the ground.</p>
+  <p>We built Portugal Expat Home because we went through this ourselves. We know what it&#8217;s like to look at a map of a country you&#8217;ve never lived in and try to figure out where you&#8217;d be happy. We know what it&#8217;s like to deal with Finan&#231;as, AIMA, and landlords who don&#8217;t speak English.</p>
+  <p>Our goal is simple: give you the information you need to make a good decision, and be there to help if you want someone handling the details.</p>
 
-  <p style="font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-    <span lang="en">A lot of people are drawn to Portugal without knowing it well yet — so they look at Lisbon and Porto, and stop there. For some, that really is the best choice. For others, it isn&#8217;t. The country has far more to offer, with municipalities that differ widely in cost of living, climate, pace and way of life — from the quiet interior to the islands. This site exists to put those alternatives on the map, so the decision isn&#8217;t limited to the names everyone already knows.</span>
-    <span lang="fr" style="display:none;">Beaucoup de personnes sont attirées par le Portugal sans encore vraiment le connaître — alors elles regardent Lisbonne et Porto, et s&#8217;arrêtent là. Pour certaines, c&#8217;est effectivement le meilleur choix. Pour d&#8217;autres, non. Le pays a bien plus à offrir, avec des municipalités très différentes les unes des autres par le coût de la vie, le climat, le rythme et le mode de vie — de l&#8217;intérieur paisible jusqu&#8217;aux îles. Ce site existe pour faire connaître ces alternatives, afin que la décision ne se limite pas aux noms que tout le monde connaît déjà.</span>
-    <span lang="pt" style="display:none;">Há muita gente interessada em Portugal que ainda conhece pouco o país — e acaba por olhar só para Lisboa e Porto. Para alguns, até pode ser a melhor opção. Para outros, não. O país tem muito mais para oferecer, com concelhos muito diferentes entre si no custo de vida, no clima, no ritmo e na maneira de viver — do interior calmo às ilhas. Este site serve para dar a conhecer essas alternativas, para que a decisão não fique limitada ao que é mais conhecido.</span>
-  </p>
+  <div class="founder-card">
+    <div class="founder-photo">&#128100;</div>
+    <div class="founder-info">
+      <h3>Live in Portugal</h3>
+      <div class="role">Founder</div>
+      <p>Find your place in Portugal. Live in Portugal helps expats find the right place to live in Portugal. From cost of living to lifestyle, we simplify your decision.</p>
+    </div>
+  </div>
+
+  <h2>How we work</h2>
+  <p>We&#8217;re not a real estate agency. We don&#8217;t sell properties and we don&#8217;t take commissions from landlords or developers. That means our recommendations are always in your interest, not someone else&#8217;s.</p>
+  <p>Our free matching tool uses real market data to suggest the best areas for your profile. If you then want hands-on help &#8212; property visits, NIF registration, contract signing &#8212; we offer those as transparent, fixed-price services.</p>
 
 </div>
 
 <div class="contact-section" id="contacto">
-  <h2 lang="en">Want us to get in touch?</h2>
-  <h2 lang="fr" style="display:none;">Vous souhaitez être recontacté(e) ?</h2>
-  <h2 lang="pt" style="display:none;">Quer ser contactado?</h2>
-  <div class="contact-grid" style="grid-template-columns: 1fr;">
+  <h2>Get in touch</h2>
+  <div class="contact-grid">
 
-    <div class="contact-form" style="max-width: 400px; margin: 0 auto;">
+    <div class="contact-form">
       <form id="contactForm" action="https://formspree.io/f/mqewpgry" method="POST" novalidate>
         <div class="form-group">
-          <label for="email"><span lang="en">Email</span><span lang="fr" style="display:none;">Email</span><span lang="pt" style="display:none;">Email</span> <span style="color:red;">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com" maxlength="120" aria-required="true">
+          <label for="name">Your name <span style="color:red;">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" minlength="2" maxlength="100" aria-required="true">
         </div>
         <div class="form-group">
-          <label for="phone"><span lang="en">Phone</span><span lang="fr" style="display:none;">Téléphone</span><span lang="pt" style="display:none;">Telefone</span> <span style="color:red;">*</span></label>
-          <input type="tel" id="phone" name="phone" required placeholder="+351 9XX XXX XXX" maxlength="20" aria-required="true">
+          <label for="email">Email <span style="color:red;">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com" maxlength="120" aria-required="true">
         </div>
-        <button type="submit" class="form-submit" style="width: 100%;">
-          <span lang="en">Request contact</span>
-          <span lang="fr" style="display:none;">Je souhaite être recontacté(e)</span>
-          <span lang="pt" style="display:none;">Quero ser contactado</span>
-        </button>
-        <div class="form-note">
-          <span lang="en">We'll get back to you within 24 hours.</span>
-          <span lang="fr" style="display:none;">Nous répondons sous 24 heures.</span>
-          <span lang="pt" style="display:none;">Respondemos em 24 horas.</span>
+        <div class="form-group">
+          <label for="interest">I'm interested in <span style="color:red;">*</span></label>
+          <select id="interest" name="interest" required aria-required="true">
+            <option value="">— Select an option —</option>
+            <option value="general">General information</option>
+            <option value="visits">Property visits</option>
+            <option value="nif">NIF registration</option>
+            <option value="bank">Bank account</option>
+            <option value="contract">Contract review</option>
+            <option value="signing">Signing with power of attorney</option>
+            <option value="package">Full relocation package</option>
+            <option value="other">Something else</option>
+          </select>
         </div>
+        <div class="form-group">
+          <label for="area">Area of interest (if any)</label>
+          <input type="text" id="area" name="area" placeholder="e.g. Lisbon, Cascais, Algarve..." maxlength="100">
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span style="color:red;">*</span></label>
+          <textarea id="message" name="message" required placeholder="Tell us a bit about your situation..." minlength="10" maxlength="2000" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send message</button>
+        <div class="form-note">We usually reply within 24 hours.</div>
         <div id="formError" style="display:none;color:#B91C1C;padding:1rem;background:#FEE2E2;border-radius:6px;margin-top:1rem;font-size:0.9rem;"></div>
       </form>
       <div id="formSuccess" style="display:none;text-align:center;padding:2rem;">
         <div style="font-size:2rem;margin-bottom:0.5rem;">&#9989;</div>
-        <p style="font-size:1rem;color:var(--dark);font-weight:500;"><span lang="en">Message sent!</span><span lang="fr" style="display:none;">Message envoyé!</span><span lang="pt" style="display:none;">Mensagem enviada!</span></p>
-        <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">
-          <span lang="en">We'll get back to you within 24 hours.</span>
-          <span lang="fr" style="display:none;">Nous répondons sous 24 heures.</span>
-          <span lang="pt" style="display:none;">Respondemos em 24 horas.</span>
-        </p>
+        <p style="font-size:1rem;color:var(--dark);font-weight:500;">Message sent!</p>
+        <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">We&#8217;ll get back to you within 24 hours.</p>
       </div>
     </div>
     <script>
       document.getElementById('contactForm').addEventListener('submit', function(e) {
         var errorDiv = document.getElementById('formError');
         errorDiv.style.display = 'none';
+        var name = document.getElementById('name').value.trim();
         var email = document.getElementById('email').value.trim();
-        var phone = document.getElementById('phone').value.trim();
+        var interest = document.getElementById('interest').value;
+        var message = document.getElementById('message').value.trim();
 
+        if (!name || name.length < 2) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please enter a valid name (at least 2 characters).';
+          errorDiv.style.display = 'block';
+          return;
+        }
         if (!email || email.indexOf('@') === -1) {
           e.preventDefault();
           errorDiv.textContent = 'Please enter a valid email address.';
           errorDiv.style.display = 'block';
           return;
         }
-        if (!phone || phone.length < 9) {
+        if (!interest) {
           e.preventDefault();
-          errorDiv.textContent = 'Please enter a valid phone number.';
+          errorDiv.textContent = 'Please select what you are interested in.';
+          errorDiv.style.display = 'block';
+          return;
+        }
+        if (!message || message.length < 10) {
+          e.preventDefault();
+          errorDiv.textContent = 'Please enter a message (at least 10 characters).';
           errorDiv.style.display = 'block';
           return;
         }
